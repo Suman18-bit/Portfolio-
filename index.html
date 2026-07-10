@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suman Seth — Software Engineer & ML Engineer | Hire Me</title>
-    <meta name="description" content="B.Tech CSE Student at Swami Vivekananda University. Skilled in Python, TensorFlow, PyTorch, NLP, Django, and more. Open to internships and opportunities.">
+    <title>Suman Seth — Software Engineer & Data Scientist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -31,9 +30,9 @@
             background: #030712;
             color: #f1f5f9;
             overflow-x: hidden;
-            cursor: none;
         }
-        @media (max-width: 768px) { body { cursor: auto; } }
+        @media (min-width: 769px) { body { cursor: none; } }
+
         ::selection { background: rgba(6,182,212,0.25); color: #ecfeff; }
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
@@ -43,12 +42,12 @@
         .cursor-dot {
             width: 7px; height: 7px; background: #22d3ee; border-radius: 50%;
             position: fixed; pointer-events: none; z-index: 9999;
-            mix-blend-mode: difference; transition: transform 0.08s;
+            mix-blend-mode: difference;
         }
         .cursor-ring {
             width: 36px; height: 36px; border: 1px solid rgba(34,211,238,0.35);
             border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998;
-            transition: all 0.12s ease-out;
+            transition: all 0.18s ease-out;
         }
         .cursor-ring.hover {
             width: 56px; height: 56px; border-color: rgba(34,211,238,0.6);
@@ -58,9 +57,9 @@
 
         .scroll-progress {
             position: fixed; top: 0; left: 0; height: 2px;
-            background: linear-gradient(90deg, #06b6d4, #8b5cf6, #06b6d4);
-            background-size: 200% 100%; animation: gShift 4s ease infinite;
-            z-index: 100; transition: width 0.05s linear;
+            background: linear-gradient(to right, #06b6d4, #8b5cf6, #06b6d4);
+            background-size: 200% 100%; animation: gShift 3s ease infinite;
+            z-index: 100; transition: width 0.1s linear;
         }
         @keyframes gShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
 
@@ -69,61 +68,88 @@
             z-index: -10; opacity: 0.45;
         }
 
-        .glass { background: rgba(255,255,255,0.02); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); }
-        .glass-strong { background: rgba(255,255,255,0.035); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.08); }
-        .glass-nav { background: rgba(3,7,18,0.7); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .glass {
+            background: rgba(255,255,255,0.02); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06);
+        }
+        .glass-strong {
+            background: rgba(255,255,255,0.035); backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.08);
+        }
+        .glass-nav {
+            background: rgba(3,7,18,0.8); backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
 
-        .text-gradient { background: linear-gradient(135deg, #67e8f9, #06b6d4, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .text-gradient-warm { background: linear-gradient(135deg, #f59e0b, #ef4444, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .text-gradient-subtle { background: linear-gradient(to right, #e2e8f0, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
+        .text-gradient {
+            background: linear-gradient(135deg, #67e8f9 0%, #06b6d4 40%, #8b5cf6 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .text-gradient-subtle {
+            background: linear-gradient(to right, #e2e8f0, #94a3b8);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .text-gradient-instagram {
+            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
         .border-gradient { position: relative; }
         .border-gradient::before {
             content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
-            background: linear-gradient(135deg, rgba(6,182,212,0.35), transparent 50%, rgba(139,92,246,0.35));
+            background: linear-gradient(135deg, rgba(6,182,212,0.3), transparent 50%, rgba(139,92,246,0.3));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
         }
 
         .btn-primary {
             background: #fff; color: #030712; font-weight: 600; font-size: 13px;
-            padding: 14px 28px; border-radius: 10px; transition: all 0.3s cubic-bezier(.4,0,.2,1);
-            border: none; cursor: none; display: inline-flex; align-items: center; gap: 8px;
-            text-decoration: none; letter-spacing: -0.01em;
+            padding: 14px 28px; border-radius: 10px; border: none; cursor: none;
+            display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+            letter-spacing: -0.01em; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
         }
-        .btn-primary:hover { background: #ecfeff; transform: translateY(-2px); box-shadow: 0 10px 40px rgba(255,255,255,0.1); }
+        .btn-primary:hover { background: #ecfeff; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(255,255,255,0.1); }
 
         .btn-cta {
             background: linear-gradient(135deg, #06b6d4, #0891b2); color: #000; font-weight: 600;
-            font-size: 13px; padding: 14px 28px; border-radius: 10px;
-            transition: all 0.3s cubic-bezier(.4,0,.2,1); border: none; cursor: none;
+            font-size: 13px; padding: 14px 28px; border-radius: 10px; border: none; cursor: none;
             display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+            letter-spacing: -0.01em; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
         }
-        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(6,182,212,0.3); }
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(6,182,212,0.3); }
 
         .btn-ghost {
             background: transparent; color: #cbd5e1; font-weight: 400; font-size: 13px;
-            padding: 14px 28px; border-radius: 10px; transition: all 0.3s cubic-bezier(.4,0,.2,1);
-            border: 1px solid rgba(255,255,255,0.08); cursor: none;
-            display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+            padding: 14px 28px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);
+            cursor: none; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
         }
         .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.15); color: #fff; transform: translateY(-2px); }
 
         .btn-hire {
-            background: linear-gradient(135deg, #06b6d4, #8b5cf6); color: #fff; font-weight: 600;
-            font-size: 14px; padding: 18px 36px; border-radius: 12px;
-            transition: all 0.3s cubic-bezier(.4,0,.2,1); border: none; cursor: none;
+            background: linear-gradient(135deg, #10b981, #059669); color: #fff; font-weight: 600;
+            font-size: 14px; padding: 16px 36px; border-radius: 12px; border: none; cursor: none;
             display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
-            box-shadow: 0 4px 20px rgba(6,182,212,0.2);
+            letter-spacing: -0.01em; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: 0 4px 20px rgba(16,185,129,0.2);
         }
-        .btn-hire:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 50px rgba(6,182,212,0.35); }
+        .btn-hire:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(16,185,129,0.3); }
+
+        .btn-resume {
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: #fff; font-weight: 600;
+            font-size: 13px; padding: 14px 28px; border-radius: 10px; border: none; cursor: none;
+            display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+            letter-spacing: -0.01em; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: 0 4px 20px rgba(139,92,246,0.2);
+        }
+        .btn-resume:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.4); }
 
         .btn-sm { padding: 10px 20px; font-size: 12px; border-radius: 8px; }
-        .btn-xs { padding: 7px 14px; font-size: 11px; border-radius: 7px; }
-        @media (max-width: 768px) { .btn-primary,.btn-cta,.btn-ghost,.btn-hire { cursor: pointer; } }
+        .btn-xs { padding: 8px 16px; font-size: 11px; border-radius: 7px; }
+        @media (max-width: 768px) { .btn-primary,.btn-cta,.btn-ghost,.btn-hire,.btn-resume { cursor: pointer; } }
 
         .card {
-            transition: all 0.5s cubic-bezier(.4,0,.2,1); position: relative; overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden;
         }
         .card::after {
             content: ''; position: absolute; inset: 0; border-radius: inherit;
@@ -134,7 +160,7 @@
         .card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.1); }
 
         .tag {
-            display: inline-flex; align-items: center; padding: 4px 11px; border-radius: 6px;
+            display: inline-flex; align-items: center; padding: 5px 11px; border-radius: 6px;
             font-size: 11px; font-weight: 400; font-family: 'JetBrains Mono', monospace;
             border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);
             color: #94a3b8; transition: all 0.3s;
@@ -142,147 +168,216 @@
         .tag:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: #e2e8f0; }
 
         .section-label {
-            font-size: 11px; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 0.15em; color: #22d3ee; font-family: 'JetBrains Mono', monospace;
+            font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em;
+            color: #22d3ee; font-family: 'JetBrains Mono', monospace;
         }
-        .section-divider { width: 40px; height: 1px; background: linear-gradient(to right, #22d3ee, transparent); margin-top: 14px; }
+        .section-divider { width: 40px; height: 1px; background: linear-gradient(to right, #22d3ee, transparent); margin-top: 16px; }
 
         .typing-cursor {
-            display: inline-block; width: 2px; height: 1.15em; background: #22d3ee;
+            display: inline-block; width: 2px; height: 1.1em; background: #22d3ee;
             margin-left: 2px; vertical-align: text-bottom; animation: blink 1s step-end infinite;
         }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-        .reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.85s cubic-bezier(.4,0,.2,1), transform 0.85s cubic-bezier(.4,0,.2,1); }
+        .reveal {
+            opacity: 0; transform: translateY(40px);
+            transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1);
+        }
         .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-left { opacity: 0; transform: translateX(-35px); transition: opacity 0.85s cubic-bezier(.4,0,.2,1), transform 0.85s cubic-bezier(.4,0,.2,1); }
+        .reveal-left {
+            opacity: 0; transform: translateX(-40px);
+            transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1);
+        }
         .reveal-left.visible { opacity: 1; transform: translateX(0); }
-        .reveal-right { opacity: 0; transform: translateX(35px); transition: opacity 0.85s cubic-bezier(.4,0,.2,1), transform 0.85s cubic-bezier(.4,0,.2,1); }
+        .reveal-right {
+            opacity: 0; transform: translateX(40px);
+            transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1);
+        }
         .reveal-right.visible { opacity: 1; transform: translateX(0); }
-        .reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity 0.85s cubic-bezier(.4,0,.2,1), transform 0.85s cubic-bezier(.4,0,.2,1); }
-        .reveal-scale.visible { opacity: 1; transform: scale(1); }
-        .d1{transition-delay:.07s} .d2{transition-delay:.14s} .d3{transition-delay:.21s}
-        .d4{transition-delay:.28s} .d5{transition-delay:.35s} .d6{transition-delay:.42s}
+        .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+        .d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}
 
-        .timeline-track { position: absolute; left: 20px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(to bottom, rgba(34,211,238,0.4), rgba(139,92,246,0.2), rgba(255,255,255,0.03)); }
-        .timeline-node { position: absolute; left: 13px; top: 6px; width: 16px; height: 16px; border-radius: 50%; border: 2px solid #22d3ee; background: #030712; z-index: 2; box-shadow: 0 0 12px rgba(34,211,238,0.3), inset 0 0 4px rgba(34,211,238,0.2); }
-        .timeline-node.purple { border-color: #8b5cf6; box-shadow: 0 0 12px rgba(139,92,246,0.3), inset 0 0 4px rgba(139,92,246,0.2); }
-        .timeline-node.amber { border-color: #f59e0b; box-shadow: 0 0 12px rgba(245,158,11,0.3), inset 0 0 4px rgba(245,158,11,0.2); }
+        .timeline-track {
+            position: absolute; left: 20px; top: 8px; bottom: 8px; width: 1px;
+            background: linear-gradient(to bottom, rgba(34,211,238,0.4), rgba(139,92,246,0.2), rgba(255,255,255,0.03));
+        }
+        .timeline-node {
+            position: absolute; left: 13px; top: 6px; width: 16px; height: 16px;
+            border-radius: 50%; border: 2px solid #22d3ee; background: #030712; z-index: 2;
+            box-shadow: 0 0 12px rgba(34,211,238,0.3), inset 0 0 4px rgba(34,211,238,0.2);
+        }
+        .timeline-node.purple {
+            border-color: #8b5cf6; box-shadow: 0 0 12px rgba(139,92,246,0.3), inset 0 0 4px rgba(139,92,246,0.2);
+        }
+        .timeline-node.amber {
+            border-color: #f59e0b; box-shadow: 0 0 12px rgba(245,158,11,0.3), inset 0 0 4px rgba(245,158,11,0.2);
+        }
 
-        .project-visual { height: 200px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .project-visual .icon-bg { font-size: 52px; opacity: 0.1; transition: all 0.7s cubic-bezier(.4,0,.2,1); }
-        .card:hover .icon-bg { opacity: 0.18; transform: scale(1.12) rotate(4deg); }
+        .project-visual {
+            height: 200px; position: relative; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .project-visual .icon-bg {
+            font-size: 52px; opacity: 0.1; transition: all 0.7s cubic-bezier(0.4,0,0.2,1);
+        }
+        .card:hover .icon-bg { opacity: 0.18; transform: scale(1.12) rotate(5deg); }
         .project-visual .grid-overlay {
             position: absolute; inset: 0;
-            background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-            background-size: 36px 36px; opacity: 0; transition: opacity 0.5s;
+            background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+            background-size: 40px 40px; opacity: 0; transition: opacity 0.5s;
         }
         .card:hover .grid-overlay { opacity: 1; }
 
         .skill-bar { height: 3px; border-radius: 2px; background: rgba(255,255,255,0.04); overflow: hidden; }
-        .skill-bar-fill { height: 100%; border-radius: 2px; transform: scaleX(0); transform-origin: left; transition: transform 1.2s cubic-bezier(.4,0,.2,1); }
+        .skill-bar-fill {
+            height: 100%; border-radius: 2px; transform: scaleX(0); transform-origin: left;
+            transition: transform 1.2s cubic-bezier(0.4,0,0.2,1);
+        }
         .skill-bar-fill.animate { transform: scaleX(1); }
 
-        .cert-item { transition: all 0.3s cubic-bezier(.4,0,.2,1); }
+        .cert-item { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
         .cert-item:hover { transform: translateX(4px); border-color: rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); }
 
-        .nav-link { color: #64748b; font-size: 13px; font-weight: 400; transition: color 0.3s; text-decoration: none; position: relative; letter-spacing: -0.01em; }
+        .nav-link {
+            color: #64748b; font-size: 13px; font-weight: 400; transition: color 0.3s;
+            text-decoration: none; position: relative; letter-spacing: -0.01em;
+        }
         .nav-link:hover { color: #e2e8f0; }
         .nav-link.active { color: #22d3ee; }
-        .nav-link.active::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 1px; background: #22d3ee; }
+        .nav-link.active::after {
+            content: ''; position: absolute; bottom: -6px; left: 0; right: 0;
+            height: 1px; background: #22d3ee;
+        }
 
         .mobile-overlay {
-            position: fixed; inset: 0; background: rgba(3,7,18,0.96); backdrop-filter: blur(30px);
-            z-index: 45; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            gap: 28px; opacity: 0; pointer-events: none; transition: opacity 0.4s;
+            position: fixed; inset: 0; background: rgba(3,7,18,0.97); backdrop-filter: blur(30px);
+            z-index: 45; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; gap: 28px; opacity: 0; pointer-events: none; transition: opacity 0.4s;
         }
         .mobile-overlay.open { opacity: 1; pointer-events: all; }
         .mobile-overlay a { font-size: 22px; font-weight: 300; color: #94a3b8; text-decoration: none; transition: color 0.3s; }
         .mobile-overlay a:hover { color: #22d3ee; }
 
-        .toast-notification {
-            position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%) translateY(100px);
-            padding: 14px 24px; border-radius: 12px; font-size: 13px; z-index: 200;
-            transition: all 0.5s cubic-bezier(.4,0,.2,1); opacity: 0; white-space: nowrap;
+        .glow-cyan {
+            position: absolute; width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(6,182,212,0.07) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
         }
-        .toast-notification.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-
-        .glow-cyan { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(6,182,212,0.07) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
-        .glow-purple { position: absolute; width: 350px; height: 350px; background: radial-gradient(circle, rgba(139,92,246,0.05) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+        .glow-purple {
+            position: absolute; width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(139,92,246,0.05) 0%, transparent 70%);
+            border-radius: 50%; pointer-events: none;
+        }
 
         .sep { height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent); }
 
-        .wido-icon {
-            width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center;
-            justify-content: center; position: relative;
+        .form-input {
+            width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px; padding: 14px 18px; color: #f1f5f9; font-size: 14px;
+            font-family: 'Inter', sans-serif; font-weight: 300; transition: all 0.3s; outline: none;
         }
-        .wido-icon::after {
-            content: ''; position: absolute; inset: -1px; border-radius: 13px; padding: 1px;
-            background: linear-gradient(135deg, var(--gc), transparent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.5;
+        .form-input::placeholder { color: #475569; }
+        .form-input:focus { border-color: rgba(6,182,212,0.3); background: rgba(255,255,255,0.04); box-shadow: 0 0 0 3px rgba(6,182,212,0.05); }
+
+        .contact-card {
+            transition: all 0.35s cubic-bezier(0.4,0,0.2,1); text-decoration: none;
         }
+        .contact-card:hover { transform: translateY(-4px); }
 
-        .social-btn {
-            display: flex; align-items: center; gap: 14px; padding: 18px 20px;
-            border-radius: 14px; transition: all 0.35s cubic-bezier(.4,0,.2,1);
-            text-decoration: none; position: relative; overflow: hidden;
-        }
-        .social-btn::before {
-            content: ''; position: absolute; inset: 0; border-radius: inherit; opacity: 0;
-            transition: opacity 0.35s;
-        }
-        .social-btn:hover { transform: translateY(-3px); }
-        .social-btn:hover::before { opacity: 1; }
-
-        .social-btn.fb { border: 1px solid rgba(59,89,152,0.2); background: rgba(59,89,152,0.05); }
-        .social-btn.fb::before { background: radial-gradient(circle at 30% 50%, rgba(59,89,152,0.1), transparent 70%); }
-        .social-btn.fb:hover { border-color: rgba(59,89,152,0.4); box-shadow: 0 8px 30px rgba(59,89,152,0.15); }
-
-        .social-btn.ig { border: 1px solid rgba(225,48,108,0.2); background: rgba(225,48,108,0.05); }
-        .social-btn.ig::before { background: radial-gradient(circle at 30% 50%, rgba(225,48,108,0.1), transparent 70%); }
-        .social-btn.ig:hover { border-color: rgba(225,48,108,0.4); box-shadow: 0 8px 30px rgba(225,48,108,0.15); }
-
-        .social-btn.wa { border: 1px solid rgba(37,211,102,0.2); background: rgba(37,211,102,0.05); }
-        .social-btn.wa::before { background: radial-gradient(circle at 30% 50%, rgba(37,211,102,0.1), transparent 70%); }
-        .social-btn.wa:hover { border-color: rgba(37,211,102,0.4); box-shadow: 0 8px 30px rgba(37,211,102,0.15); }
-
-        .social-btn.gh { border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); }
-        .social-btn.gh::before { background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.04), transparent 70%); }
-        .social-btn.gh:hover { border-color: rgba(255,255,255,0.15); }
-
-        .social-btn.li { border: 1px solid rgba(10,102,194,0.2); background: rgba(10,102,194,0.05); }
-        .social-btn.li::before { background: radial-gradient(circle at 30% 50%, rgba(10,102,194,0.1), transparent 70%); }
-        .social-btn.li:hover { border-color: rgba(10,102,194,0.4); box-shadow: 0 8px 30px rgba(10,102,194,0.15); }
-
-        .social-btn.em { border: 1px solid rgba(6,182,212,0.2); background: rgba(6,182,212,0.05); }
-        .social-btn.em::before { background: radial-gradient(circle at 30% 50%, rgba(6,182,212,0.1), transparent 70%); }
-        .social-btn.em:hover { border-color: rgba(6,182,212,0.4); box-shadow: 0 8px 30px rgba(6,182,212,0.15); }
-
-        .social-btn.ph { border: 1px solid rgba(16,185,129,0.2); background: rgba(16,185,129,0.05); }
-        .social-btn.ph::before { background: radial-gradient(circle at 30% 50%, rgba(16,185,129,0.1), transparent 70%); }
-        .social-btn.ph:hover { border-color: rgba(16,185,129,0.4); box-shadow: 0 8px 30px rgba(16,185,129,0.15); }
-
-        .hire-badge {
-            display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;
-            border-radius: 999px; font-size: 11px; font-weight: 600;
-            background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
-            color: #34d399; text-transform: uppercase; letter-spacing: 0.08em;
+        .hire-banner {
+            background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(6,182,212,0.08) 50%, rgba(139,92,246,0.08) 100%);
+            border: 1px solid rgba(16,185,129,0.15);
         }
 
         .highlight-card {
             position: relative; overflow: hidden;
         }
         .highlight-card::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(6,182,212,0.08), transparent, rgba(139,92,246,0.08), transparent);
-            animation: spin 8s linear infinite; opacity: 0; transition: opacity 0.5s;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(to right, #06b6d4, #8b5cf6);
         }
-        .highlight-card:hover::before { opacity: 1; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .highlight-card > * { position: relative; z-index: 1; }
 
-        @media (max-width: 768px) { .project-visual { height: 150px; } }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+        .social-btn {
+            display: flex; align-items: center; gap: 12px; padding: 16px 24px;
+            border-radius: 14px; font-size: 14px; font-weight: 500; text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .social-btn:hover { transform: translateY(-3px); }
+        .social-btn .social-icon {
+            width: 40px; height: 40px; border-radius: 10px; display: flex;
+            align-items: center; justify-content: center; flex-shrink: 0;
+        }
+
+        .footer-link { color: #64748b; font-size: 13px; transition: color 0.3s; text-decoration: none; }
+        .footer-link:hover { color: #22d3ee; }
+
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid #22d3ee; outline-offset: 3px; border-radius: 4px;
+        }
+
+        /* Floating social sidebar */
+        .floating-social {
+            position: fixed; left: 20px; top: 50%; transform: translateY(-50%);
+            z-index: 40; display: flex; flex-direction: column; gap: 10px;
+            opacity: 0; pointer-events: none; transition: opacity 0.4s, transform 0.4s;
+        }
+        .floating-social.visible { opacity: 1; pointer-events: all; }
+        .floating-social a {
+            width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.06); color: #64748b; transition: all 0.3s;
+            text-decoration: none;
+        }
+        .floating-social a:hover { transform: translateX(4px); }
+        .floating-social a.whatsapp:hover { color: #25d366; border-color: rgba(37,211,102,0.3); background: rgba(37,211,102,0.05); }
+        .floating-social a.linkedin:hover { color: #0a66c2; border-color: rgba(10,102,194,0.3); background: rgba(10,102,194,0.05); }
+        .floating-social a.github:hover { color: #fff; border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); }
+        .floating-social a.facebook:hover { color: #1877f2; border-color: rgba(24,119,242,0.3); background: rgba(24,119,242,0.05); }
+        .floating-social a.instagram:hover { color: #e1306c; border-color: rgba(225,48,108,0.3); background: rgba(225,48,108,0.05); }
+        .floating-social .fs-label {
+            position: absolute; left: 50px; top: 50%; transform: translateY(-50%);
+            font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #94a3b8;
+            background: rgba(3,7,18,0.95); padding: 4px 10px; border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.06); white-space: nowrap; opacity: 0;
+            transition: opacity 0.2s; pointer-events: none;
+        }
+        .floating-social a:hover .fs-label { opacity: 1; }
+        @media (max-width: 1024px) { .floating-social { display: none; } }
+
+        /* Instagram gradient backgrounds */
+        .bg-instagram {
+            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        .bg-facebook { background: #1877f2; }
+
+        /* Recruiter banner enhancements */
+        .recruiter-stat {
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+        .recruiter-stat:hover { transform: translateY(-3px); }
+
+        /* Pulse animation for availability */
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(16,185,129,0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(16,185,129,0); }
+            100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+        }
+        .pulse-available { animation: pulse-ring 2s infinite; }
+
+        /* HR badge */
+        .hr-badge {
+            display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;
+            border-radius: 20px; font-size: 11px; font-weight: 500; font-family: 'JetBrains Mono', monospace;
+            background: linear-gradient(135deg, rgba(6,182,212,0.1), rgba(139,92,246,0.1));
+            border: 1px solid rgba(6,182,212,0.2); color: #67e8f9;
+        }
+
+        @media (max-width: 768px) {
+            .project-visual { height: 150px; }
+        }
     </style>
 </head>
 <body>
@@ -292,9 +387,37 @@
 <div class="scroll-progress" id="scroll-progress"></div>
 <canvas id="three-canvas"></canvas>
 
-<div class="glow-cyan" style="top:8%;left:-10%"></div>
-<div class="glow-purple" style="top:45%;right:-8%"></div>
-<div class="glow-cyan" style="bottom:5%;left:25%;opacity:0.4"></div>
+<div class="glow-cyan" style="top:10%;left:-10%"></div>
+<div class="glow-purple" style="top:50%;right:-8%"></div>
+<div class="glow-cyan" style="bottom:10%;left:30%;opacity:0.4"></div>
+
+<!-- Floating Social Sidebar -->
+<div class="floating-social" id="floating-social">
+    <a href="https://wa.me/919547111445?text=Hi%20Suman%2C%20I%27d%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener" class="whatsapp" aria-label="WhatsApp">
+        <i data-lucide="message-circle" class="w-[18px] h-[18px]"></i>
+        <span class="fs-label">WhatsApp</span>
+    </a>
+    <a href="mailto:sethn533@gmail.com?subject=Opportunity%20for%20Suman%20Seth" class="linkedin" aria-label="Email" style="color:#64748b">
+        <i data-lucide="mail" class="w-[18px] h-[18px]"></i>
+        <span class="fs-label">Email</span>
+    </a>
+    <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn">
+        <i data-lucide="linkedin" class="w-[18px] h-[18px]"></i>
+        <span class="fs-label">LinkedIn</span>
+    </a>
+    <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="github" aria-label="GitHub">
+        <i data-lucide="github" class="w-[18px] h-[18px]"></i>
+        <span class="fs-label">GitHub</span>
+    </a>
+    <a href="https://www.facebook.com/suman.seth.0007" target="_blank" rel="noopener" class="facebook" aria-label="Facebook">
+        <i data-lucide="facebook" class="w-[18px] h-[18px]"></i>
+        <span class="fs-label">Facebook</span>
+    </a>
+    <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="instagram" aria-label="Instagram">
+        <i data-lucide="instagram" class="w-[18px] h-[18px]"></i>
+        <span class="fs-label">Instagram</span>
+    </a>
+</div>
 
 <!-- NAV -->
 <nav class="glass-nav fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6 lg:px-10">
@@ -305,12 +428,12 @@
             </div>
             <div class="hidden sm:block">
                 <div class="text-white text-sm font-medium leading-tight">Suman Seth</div>
-                <div class="text-slate-600 text-[10px] font-mono tracking-wider">OPEN TO WORK</div>
+                <div class="text-slate-600 text-[10px] font-mono tracking-wider">ENGINEER · DATA SCIENTIST</div>
             </div>
         </a>
-        <div class="hidden lg:flex items-center gap-8">
+        <div class="hidden lg:flex items-center gap-9">
             <a href="#about" class="nav-link" data-section="about">About</a>
-            <a href="#whyhire" class="nav-link" data-section="whyhire">Why Hire Me</a>
+            <a href="#highlights" class="nav-link" data-section="highlights">Highlights</a>
             <a href="#projects" class="nav-link" data-section="projects">Projects</a>
             <a href="#education" class="nav-link" data-section="education">Education</a>
             <a href="#skills" class="nav-link" data-section="skills">Skills</a>
@@ -318,16 +441,32 @@
             <a href="#contact" class="nav-link" data-section="contact">Contact</a>
         </div>
         <div class="flex items-center gap-2">
-            <a href="https://github.com/Suman18-bit" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all"><i data-lucide="github" class="w-[17px] h-[17px]"></i></a>
-            <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all"><i data-lucide="linkedin" class="w-[17px] h-[17px]"></i></a>
-            <button id="mobile-toggle" class="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all"><i data-lucide="menu" class="w-[17px] h-[17px]"></i></button>
+            <a href="https://wa.me/919547111445?text=Hi%20Suman%2C%20I%27d%20like%20to%20hire%20you." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium hover:bg-emerald-500/20 transition-all">
+                <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span></span>
+                Available
+            </a>
+            <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+                <i data-lucide="github" class="w-[18px] h-[18px]"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+                <i data-lucide="linkedin" class="w-[18px] h-[18px]"></i>
+            </a>
+            <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+                <i data-lucide="instagram" class="w-[18px] h-[18px]"></i>
+            </a>
+            <a href="https://www.facebook.com/suman.seth.0007" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+                <i data-lucide="facebook" class="w-[18px] h-[18px]"></i>
+            </a>
+            <button id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" class="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+                <i data-lucide="menu" class="w-[18px] h-[18px]"></i>
+            </button>
         </div>
     </div>
 </nav>
 
 <div id="mobile-overlay" class="mobile-overlay">
     <a href="#about" onclick="closeMobile()">About</a>
-    <a href="#whyhire" onclick="closeMobile()">Why Hire Me</a>
+    <a href="#highlights" onclick="closeMobile()">Highlights</a>
     <a href="#projects" onclick="closeMobile()">Projects</a>
     <a href="#education" onclick="closeMobile()">Education</a>
     <a href="#skills" onclick="closeMobile()">Skills</a>
@@ -338,12 +477,13 @@
 <!-- HERO -->
 <section id="hero" class="min-h-screen flex flex-col justify-center px-6 lg:px-10 pt-32 pb-24 relative">
     <div class="max-w-5xl mx-auto w-full">
-        <div class="reveal flex flex-wrap items-center gap-3 mb-10">
-            <span class="hire-badge">
-                <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span>
-                Open to Opportunities
+        <div class="reveal flex items-center gap-3 mb-10 flex-wrap">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
-            <span class="text-slate-700 text-sm font-light">India 🇮🇳</span>
+            <span class="text-slate-500 text-sm font-light">Actively seeking internship & full-time opportunities</span>
+            <span class="hr-badge"><i data-lucide="briefcase" class="w-3 h-3"></i> Open to Work</span>
         </div>
 
         <h1 class="reveal d1 text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[0.9] tracking-[-0.045em] mb-8">
@@ -358,38 +498,71 @@
         </div>
 
         <p class="reveal d3 text-[15px] font-light text-slate-600 leading-relaxed max-w-2xl mb-12">
-            Swami Vivekananda University, Class of 2028 · Grade A+ · Building intelligent systems at the intersection of machine learning, data science, and production software.
+            B.Tech CSE @ Swami Vivekananda University (2028). Building production-grade AI systems, from LLM-powered applications to real-time computer vision. Consistent A+ grade holder with 17+ industry certifications.
         </p>
 
-        <div class="reveal d4 flex flex-wrap gap-3 mb-20">
-            <a href="#contact" class="btn-hire">
-                <i data-lucide="zap" class="w-4 h-4"></i> Hire Me
+        <div class="reveal d4 flex flex-wrap gap-3 mb-12">
+            <a href="https://wa.me/919547111445?text=Hi%20Suman%2C%20I%27d%20like%20to%20discuss%20an%20opportunity%20with%20you." target="_blank" rel="noopener" class="btn-hire">
+                <i data-lucide="message-circle" class="w-4 h-4"></i> Hire Me — WhatsApp
             </a>
             <a href="#projects" class="btn-primary">
                 <i data-lucide="layers" class="w-4 h-4"></i> View Projects
             </a>
-            <a href="https://github.com/Suman18-bit" target="_blank" class="btn-ghost">
+            <a href="mailto:sethn533@gmail.com?subject=Requesting%20Resume%20-%20Suman%20Seth&body=Hi%20Suman%2C%20please%20share%20your%20resume." class="btn-resume">
+                <i data-lucide="file-text" class="w-4 h-4"></i> Request Resume
+            </a>
+            <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="btn-ghost">
                 <i data-lucide="github" class="w-4 h-4"></i> GitHub
             </a>
         </div>
 
-        <div class="reveal d5 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 pt-10 border-t border-white/[0.04]">
-            <div>
-                <div class="text-3xl md:text-4xl font-bold tracking-tight text-gradient" data-count="4">0</div>
-                <div class="text-slate-600 text-xs font-light mt-2">Projects Built</div>
+        <!-- HR Quick Stats Banner -->
+        <div class="reveal d5 glass-strong rounded-2xl p-6 md:p-7 border-gradient mb-10">
+            <div class="flex items-center gap-2 mb-5">
+                <i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i>
+                <span class="text-cyan-400 text-xs font-mono uppercase tracking-widest font-semibold">Recruiter Quick View</span>
             </div>
-            <div>
-                <div class="text-3xl md:text-4xl font-bold tracking-tight text-gradient" data-count="17">0</div>
-                <div class="text-slate-600 text-xs font-light mt-2">Certifications</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="recruiter-stat">
+                    <div class="text-3xl md:text-4xl font-bold tracking-tight text-gradient" data-count="4">0</div>
+                    <div class="text-slate-600 text-xs font-light mt-2 tracking-wide">AI/ML Projects</div>
+                </div>
+                <div class="recruiter-stat">
+                    <div class="text-3xl md:text-4xl font-bold tracking-tight text-gradient" data-count="17">0</div>
+                    <div class="text-slate-600 text-xs font-light mt-2 tracking-wide">Certifications</div>
+                </div>
+                <div class="recruiter-stat">
+                    <div class="text-3xl md:text-4xl font-bold tracking-tight text-gradient" data-count="30">0</div>
+                    <div class="text-slate-600 text-xs font-light mt-2 tracking-wide">Technologies</div>
+                </div>
+                <div class="recruiter-stat">
+                    <div class="text-3xl md:text-4xl font-bold tracking-tight text-gradient">A+</div>
+                    <div class="text-slate-600 text-xs font-light mt-2 tracking-wide">Current GPA</div>
+                </div>
             </div>
-            <div>
-                <div class="text-3xl md:text-4xl font-bold tracking-tight text-gradient" data-count="30">0</div>
-                <div class="text-slate-600 text-xs font-light mt-2">+ Technologies</div>
-            </div>
-            <div>
-                <div class="text-3xl md:text-4xl font-bold tracking-tight text-gradient">A+</div>
-                <div class="text-slate-600 text-xs font-light mt-2">Current GPA</div>
-            </div>
+        </div>
+
+        <!-- Social proof row -->
+        <div class="reveal d6 flex flex-wrap items-center gap-3 pt-8 border-t border-white/[0.04]">
+            <span class="text-slate-600 text-xs font-mono uppercase tracking-widest mr-2">Find me on</span>
+            <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all" aria-label="WhatsApp">
+                <i data-lucide="message-circle" class="w-[16px] h-[16px]"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-blue-400 hover:bg-blue-500/10 transition-all" aria-label="LinkedIn">
+                <i data-lucide="linkedin" class="w-[16px] h-[16px]"></i>
+            </a>
+            <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/10 transition-all" aria-label="GitHub">
+                <i data-lucide="github" class="w-[16px] h-[16px]"></i>
+            </a>
+            <a href="https://www.facebook.com/suman.seth.0007" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-blue-400 hover:bg-blue-500/10 transition-all" aria-label="Facebook">
+                <i data-lucide="facebook" class="w-[16px] h-[16px]"></i>
+            </a>
+            <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-pink-400 hover:bg-pink-500/10 transition-all" aria-label="Instagram">
+                <i data-lucide="instagram" class="w-[16px] h-[16px]"></i>
+            </a>
+            <a href="mailto:sethn533@gmail.com" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-all" aria-label="Email">
+                <i data-lucide="mail" class="w-[16px] h-[16px]"></i>
+            </a>
         </div>
     </div>
 
@@ -406,114 +579,81 @@
 <!-- ABOUT -->
 <section id="about" class="px-6 lg:px-10 py-28">
     <div class="max-w-7xl mx-auto">
-        <div class="reveal"><span class="section-label">01 — About</span><h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Who I Am</h2><div class="section-divider"></div></div>
+        <div class="reveal">
+            <span class="section-label">01 — About</span>
+            <h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Profile Summary</h2>
+            <div class="section-divider"></div>
+        </div>
+
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 mt-16">
             <div class="lg:col-span-7 reveal-left">
                 <div class="space-y-5">
                     <p class="text-slate-400 font-light leading-[1.85] text-[15px]">
-                        I'm <span class="text-white font-normal">Suman Seth</span>, a Computer Science Engineering student at <span class="text-cyan-400">Swami Vivekananda University</span>, Kolkata. I specialize in building intelligent systems that combine <span class="text-white font-normal">machine learning</span>, <span class="text-white font-normal">natural language processing</span>, and <span class="text-white font-normal">production-grade software</span>.
+                        I'm <span class="text-white font-normal">Suman Seth</span>, a Computer Science Engineering student at
+                        <span class="text-cyan-400">Swami Vivekananda University, Kolkata</span>. I specialize in building intelligent systems that combine cutting-edge AI/ML with robust software engineering practices.
                     </p>
                     <p class="text-slate-400 font-light leading-[1.85] text-[15px]">
-                        My projects range from a <span class="text-white font-normal">Smart Image Caption Generator</span> using CNN-LSTM to an <span class="text-white font-normal">LLM-powered book Q&A system</span> with RAG architecture — demonstrating end-to-end capability from research to deployment.
+                        My project portfolio spans <span class="text-white font-normal">NLP and LLM applications</span> (RAG-based book Q&A with LangChain + ChromaDB),
+                        <span class="text-white font-normal">computer vision</span> (CNN-LSTM image captioning, real-time emotion detection), and
+                        <span class="text-white font-normal">recommendation systems</span> (collaborative + content-based filtering). Every project is end-to-end: from data pipeline to deployed interface.
                     </p>
                     <p class="text-slate-400 font-light leading-[1.85] text-[15px]">
-                        With <span class="text-white font-normal">17+ certifications</span> from Microsoft, LinkedIn Learning, Qualcomm, and Saylor University, I maintain a disciplined approach to continuous learning. I'm currently seeking <span class="text-cyan-400">internships and entry-level roles</span> where I can contribute to meaningful AI/ML projects.
+                        With <span class="text-white font-normal">17 certifications</span> from Microsoft, LinkedIn, Qualcomm, Saylor University, HP, and Great Learning — I bring validated expertise in NLP, deep learning, data engineering, and SQL. I maintain an <span class="text-emerald-400 font-normal">A+ grade</span> consistently while actively contributing to open-source and pursuing self-directed learning.
                     </p>
                 </div>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f0f0f0;
-    }
 
-    .resume-btn {
-      background: linear-gradient(45deg, #4CAF50, #45a049);
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      font-size: 18px;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      position: relative;
-      overflow: hidden;
-      animation: pulse 2s infinite;
-    }
-
-    /* Hover animation: glow + bounce */
-    .resume-btn:hover {
-      transform: scale(1.1) rotate(2deg);
-      background: linear-gradient(45deg, #45a049, #4CAF50);
-      box-shadow: 0 0 20px #4CAF50;
-    }
-
-    /* Click animation */
-    .resume-btn:active {
-      transform: scale(0.95);
-    }
-
-    /* Pulse animation */
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px rgba(76,175,80,0.6); }
-      50% { box-shadow: 0 0 25px rgba(76,175,80,1); }
-      100% { box-shadow: 0 0 10px rgba(76,175,80,0.6); }
-    }
-
-    /* Ripple effect */
-    .resume-btn::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: -100%;
-      background: rgba(255,255,255,0.3);
-      transform: skewX(-20deg);
-    }
-
-    .resume-btn:hover::after {
-      animation: shine 1s forwards;
-    }
-
-    @keyframes shine {
-      0% { left: -100%; }
-      100% { left: 200%; }
-    }
-  </style>
-</head>
-<body>
-  <button class="resume-btn" onclick="window.open('Resume.pdf', '_blank')">
-    View Resume
-  </button>
-</body>
-
-
-                    <a href="mailto:sethn533@gmail.com" class="btn-ghost btn-sm"><i data-lucide="mail" class="w-3.5 h-3.5"></i> Email Me</a>
+                <div class="flex flex-wrap gap-3 mt-10">
+                    <a href="mailto:sethn533@gmail.com?subject=Opportunity%20for%20Suman%20Seth" class="btn-cta btn-sm">
+                        <i data-lucide="mail" class="w-3.5 h-3.5"></i> Email Me
+                    </a>
+                    <a href="https://wa.me/919547111445?text=Hi%20Suman%2C%20I%27d%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener" class="btn-ghost btn-sm">
+                        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="btn-ghost btn-sm">
+                        <i data-lucide="instagram" class="w-3.5 h-3.5"></i> Instagram
+                    </a>
                 </div>
             </div>
+
             <div class="lg:col-span-5 reveal-right">
                 <div class="glass-strong rounded-2xl p-7 space-y-4 border-gradient">
                     <h3 class="text-white font-medium text-sm tracking-wide mb-5">AT A GLANCE</h3>
                     <div class="space-y-3">
-                        <div class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-3.5 h-3.5 text-cyan-400"></i></div><div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Name</div><div class="text-slate-200 text-sm font-light">Suman Seth</div></div></div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-3.5 h-3.5 text-cyan-400"></i></div>
+                            <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Name</div><div class="text-slate-200 text-sm font-light">Suman Seth</div></div>
+                        </div>
                         <div class="h-px bg-white/[0.03]"></div>
-                        <div class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i></div><div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Location</div><div class="text-slate-200 text-sm font-light">Bayal, Nandigram-II, West Bengal, India, 721656</div></div></div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i></div>
+                            <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Location</div><div class="text-slate-200 text-sm font-light">Nandigram-II, West Bengal</div></div>
+                        </div>
                         <div class="h-px bg-white/[0.03]"></div>
-                        <div class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-purple-400"></i></div><div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">University</div><div class="text-slate-200 text-sm font-light">Swami Vivekananda University</div></div></div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-purple-400"></i></div>
+                            <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">University</div><div class="text-slate-200 text-sm font-light">Swami Vivekananda University</div></div>
+                        </div>
                         <div class="h-px bg-white/[0.03]"></div>
-                        <div class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="calendar" class="w-3.5 h-3.5 text-emerald-400"></i></div><div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Graduation</div><div class="text-slate-200 text-sm font-light">August 2028</div></div></div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="calendar" class="w-3.5 h-3.5 text-emerald-400"></i></div>
+                            <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Graduation</div><div class="text-slate-200 text-sm font-light">August 2028</div></div>
+                        </div>
                         <div class="h-px bg-white/[0.03]"></div>
-                        <div class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i></div><div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Phone</div><a href="tel:+919547111445" class="text-slate-200 text-sm font-light hover:text-cyan-400 transition-colors">+91 9547111445</a></div></div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i></div>
+                            <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Phone / WhatsApp</div><a href="tel:+919547111445" class="text-slate-200 text-sm font-light hover:text-cyan-400 transition-colors">+91 9547111445</a></div>
+                        </div>
                         <div class="h-px bg-white/[0.03]"></div>
-                        <div class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-3.5 h-3.5 text-rose-400"></i></div><div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Email</div><a href="mailto:sethn533@gmail.com" class="text-cyan-400 text-sm font-light hover:text-cyan-300 transition-colors">sethn533@gmail.com</a></div></div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-3.5 h-3.5 text-rose-400"></i></div>
+                            <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Email</div><a href="mailto:sethn533@gmail.com" class="text-cyan-400 text-sm font-light hover:text-cyan-300 transition-colors">sethn533@gmail.com</a></div>
+                        </div>
                     </div>
-                    <div class="pt-4 flex gap-2">
-                        <a href="https://github.com/Suman18-bit" target="_blank" class="btn-ghost btn-xs flex-1 justify-center"><i data-lucide="github" class="w-3 h-3"></i> GitHub</a>
-                        <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" class="btn-ghost btn-xs flex-1 justify-center"><i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn</a>
+                    <div class="pt-4 grid grid-cols-2 gap-2">
+                        <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="btn-ghost btn-xs justify-center"><i data-lucide="github" class="w-3 h-3"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="btn-ghost btn-xs justify-center"><i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn</a>
+                        <a href="https://www.facebook.com/suman.seth.0007" target="_blank" rel="noopener" class="btn-ghost btn-xs justify-center"><i data-lucide="facebook" class="w-3 h-3"></i> Facebook</a>
+                        <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="btn-ghost btn-xs justify-center"><i data-lucide="instagram" class="w-3 h-3"></i> Instagram</a>
                     </div>
                 </div>
             </div>
@@ -523,52 +663,79 @@
 
 <div class="sep max-w-7xl mx-auto"></div>
 
-<!-- WHY HIRE ME -->
-<section id="whyhire" class="px-6 lg:px-10 py-28">
+<!-- HR HIGHLIGHTS -->
+<section id="highlights" class="px-6 lg:px-10 py-28">
     <div class="max-w-7xl mx-auto">
-        <div class="reveal"><span class="section-label">02 — Value Proposition</span><h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Why Hire Me</h2><div class="section-divider"></div></div>
+        <div class="reveal">
+            <span class="section-label">02 — Why Hire Me</span>
+            <h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Key Strengths</h2>
+            <div class="section-divider"></div>
+            <p class="text-slate-500 font-light text-[15px] mt-6 max-w-2xl">Six reasons recruiters and engineering managers should consider Suman for their next AI/ML or full-stack role.</p>
+        </div>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-16">
-            <div class="reveal d1 glass rounded-2xl p-7 card highlight-card border-gradient">
-                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-5">
-                    <i data-lucide="brain" class="w-6 h-6 text-cyan-400"></i>
+            <div class="reveal d1 glass rounded-2xl p-7 card highlight-card group">
+                <div class="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5">
+                    <i data-lucide="trophy" class="w-5 h-5 text-emerald-400"></i>
                 </div>
-                <h3 class="text-white font-medium text-[15px] mb-2">End-to-End ML Skills</h3>
-                <p class="text-slate-500 font-light text-sm leading-relaxed">From data preprocessing to model training, evaluation, and deployment — I can own the entire ML pipeline independently.</p>
+                <h3 class="text-white font-medium text-[15px] mb-2">Consistent A+ Grade</h3>
+                <p class="text-slate-500 font-light text-sm leading-relaxed">Maintaining top academic performance throughout B.Tech CSE — demonstrating discipline, consistency, and deep understanding of core CS fundamentals.</p>
             </div>
-            <div class="reveal d2 glass rounded-2xl p-7 card highlight-card border-gradient">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-5">
-                    <i data-lucide="message-square" class="w-6 h-6 text-purple-400"></i>
+            <div class="reveal d2 glass rounded-2xl p-7 card highlight-card group">
+                <div class="w-11 h-11 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-5">
+                    <i data-lucide="award" class="w-5 h-5 text-cyan-400"></i>
                 </div>
-                <h3 class="text-white font-medium text-[15px] mb-2">Cutting-Edge NLP & LLMs</h3>
-                <p class="text-slate-500 font-light text-sm leading-relaxed">Hands-on with LangChain, RAG architectures, HuggingFace, and vector databases — the exact stack companies are hiring for right now.</p>
+                <h3 class="text-white font-medium text-[15px] mb-2">17 Industry Certifications</h3>
+                <p class="text-slate-500 font-light text-sm leading-relaxed">Validated skills from Microsoft, LinkedIn, Qualcomm, Saylor University, HP, and Great Learning — covering NLP, deep learning, data engineering, and SQL.</p>
             </div>
-            <div class="reveal d3 glass rounded-2xl p-7 card highlight-card border-gradient">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5">
-                    <i data-lucide="code-2" class="w-6 h-6 text-emerald-400"></i>
+            <div class="reveal d3 glass rounded-2xl p-7 card highlight-card group">
+                <div class="w-11 h-11 rounded-xl bg-purple-500/10 flex items-center justify-center mb-5">
+                    <i data-lucide="rocket" class="w-5 h-5 text-purple-400"></i>
                 </div>
-                <h3 class="text-white font-medium text-[15px] mb-2">Full-Stack Awareness</h3>
-                <p class="text-slate-500 font-light text-sm leading-relaxed">Not just notebooks — I build with Django, Streamlit, REST APIs, Docker, and cloud platforms. I understand production requirements.</p>
+                <h3 class="text-white font-medium text-[15px] mb-2">End-to-End Project Ownership</h3>
+                <p class="text-slate-500 font-light text-sm leading-relaxed">Each project is built from scratch — data collection, model training, API development, to deployment. Not just notebooks, but production-grade systems.</p>
             </div>
-            <div class="reveal d4 glass rounded-2xl p-7 card highlight-card border-gradient">
-                <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-5">
-                    <i data-lucide="award" class="w-6 h-6 text-amber-400"></i>
+            <div class="reveal d4 glass rounded-2xl p-7 card highlight-card group">
+                <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center mb-5">
+                    <i data-lucide="brain" class="w-5 h-5 text-amber-400"></i>
                 </div>
-                <h3 class="text-white font-medium text-[15px] mb-2">Proven Learning Discipline</h3>
-                <p class="text-slate-500 font-light text-sm leading-relaxed">17 certifications from Microsoft, Qualcomm, LinkedIn, and Saylor University in just 2 years — showing dedication to structured upskilling.</p>
+                <h3 class="text-white font-medium text-[15px] mb-2">LLM & GenAI Ready</h3>
+                <p class="text-slate-500 font-light text-sm leading-relaxed">Hands-on with LangChain, HuggingFace, ChromaDB, and prompt engineering. Built RAG systems — ready to contribute to GenAI initiatives from day one.</p>
             </div>
-            <div class="reveal d5 glass rounded-2xl p-7 card highlight-card border-gradient">
-                <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
-                    <i data-lucide="trending-up" class="w-6 h-6 text-rose-400"></i>
+            <div class="reveal d5 glass rounded-2xl p-7 card highlight-card group">
+                <div class="w-11 h-11 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
+                    <i data-lucide="code-2" class="w-5 h-5 text-rose-400"></i>
                 </div>
-                <h3 class="text-white font-medium text-[15px] mb-2">Academic Excellence</h3>
-                <p class="text-slate-500 font-light text-sm leading-relaxed">Consistent A+ grade in B.Tech CSE — strong foundations in DSA, OS, DBMS, and core computer science fundamentals.</p>
+                <h3 class="text-white font-medium text-[15px] mb-2">Full-Stack + AI Hybrid</h3>
+                <p class="text-slate-500 font-light text-sm leading-relaxed">Rare combination of backend engineering (Django, REST APIs, Docker) and AI/ML expertise. Can build and deploy intelligent applications independently.</p>
             </div>
-            <div class="reveal d6 glass rounded-2xl p-7 card highlight-card border-gradient">
-                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5">
-                    <i data-lucide="rocket" class="w-6 h-6 text-blue-400"></i>
+            <div class="reveal d6 glass rounded-2xl p-7 card highlight-card group">
+                <div class="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5">
+                    <i data-lucide="trending-up" class="w-5 h-5 text-blue-400"></i>
                 </div>
-                <h3 class="text-white font-medium text-[15px] mb-2">Ready to Contribute</h3>
-                <p class="text-slate-500 font-light text-sm leading-relaxed">Fresh perspective, high energy, and zero unlearning needed. I bring enthusiasm, adaptability, and a genuine passion for building great tech.</p>
+                <h3 class="text-white font-medium text-[15px] mb-2">Fast Learner, Self-Driven</h3>
+                <p class="text-slate-500 font-light text-sm leading-relaxed">From C to Kotlin, from basic ML to LLM orchestration — I pick up new technologies rapidly and apply them through real projects, not just tutorials.</p>
+            </div>
+        </div>
+
+        <!-- HR Action Banner -->
+        <div class="reveal d3 mt-10 glass-strong rounded-2xl p-7 md:p-8 border-gradient flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="user-check" class="w-6 h-6 text-cyan-400"></i>
+                </div>
+                <div>
+                    <h3 class="text-white font-medium text-base mb-1">Recruiter? Let's skip the back-and-forth.</h3>
+                    <p class="text-slate-500 font-light text-sm">Direct WhatsApp, email, and social channels — I respond within 24 hours.</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <a href="https://wa.me/919547111445?text=Hi%20Suman%2C%20I%27m%20a%20recruiter%20and%20would%20love%20to%20connect." target="_blank" rel="noopener" class="btn-hire btn-sm">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                </a>
+                <a href="mailto:sethn533@gmail.com?subject=Interview%20Opportunity" class="btn-cta btn-sm">
+                    <i data-lucide="mail" class="w-3.5 h-3.5"></i> Email
+                </a>
             </div>
         </div>
     </div>
@@ -579,42 +746,83 @@
 <!-- PROJECTS -->
 <section id="projects" class="px-6 lg:px-10 py-28">
     <div class="max-w-7xl mx-auto">
-        <div class="reveal"><span class="section-label">03 — Projects</span><h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Featured Work</h2><div class="section-divider"></div><p class="text-slate-500 font-light text-[15px] mt-6 max-w-lg">Production-quality projects demonstrating real-world AI/ML and software engineering capabilities.</p></div>
+        <div class="reveal">
+            <span class="section-label">03 — Projects</span>
+            <h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Featured Work</h2>
+            <div class="section-divider"></div>
+            <p class="text-slate-500 font-light text-[15px] mt-6 max-w-lg">Production-quality projects demonstrating AI/ML, NLP, computer vision, and full-stack capabilities.</p>
+        </div>
+
         <div class="grid md:grid-cols-2 gap-6 mt-16">
             <div class="reveal d1 glass rounded-2xl overflow-hidden card border-gradient group">
-                <div class="project-visual bg-gradient-to-br from-cyan-950/30 to-slate-950/50"><div class="grid-overlay"></div><i data-lucide="book-open" class="icon-bg text-cyan-400"></i><div class="absolute top-4 right-4"><span class="text-[10px] font-mono font-medium uppercase tracking-widest text-cyan-400/60 bg-cyan-400/5 border border-cyan-400/10 px-3 py-1 rounded-full">NLP · LLM · RAG</span></div></div>
+                <div class="project-visual bg-gradient-to-br from-cyan-950/30 to-slate-950/50">
+                    <div class="grid-overlay"></div>
+                    <i data-lucide="book-open" class="icon-bg text-cyan-400"></i>
+                    <div class="absolute top-4 right-4"><span class="text-[10px] font-mono font-medium uppercase tracking-widest text-cyan-400/60 bg-cyan-400/5 border border-cyan-400/10 px-3 py-1 rounded-full">NLP · LLM · RAG</span></div>
+                </div>
                 <div class="p-7">
                     <h3 class="text-lg font-medium mb-2 group-hover:text-cyan-300 transition-colors">AskMyBook</h3>
-                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-5">Intelligent Q&A system for books using LLMs with RAG architecture. Users ask questions in natural language and get precise, context-aware answers with source attribution.</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"><span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">ChromaDB</span><span class="tag">HuggingFace</span></div>
-                    <a href="https://github.com/Suman18-bit/AskMyBook" target="_blank" class="inline-flex items-center gap-2 text-cyan-400 text-xs font-medium hover:text-cyan-300 transition-colors group/l"><i data-lucide="github" class="w-3.5 h-3.5"></i> View Source <i data-lucide="arrow-up-right" class="w-3 h-3 transition-transform group-hover/l:translate-x-0.5 group-hover/l:-translate-y-0.5"></i></a>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-5">Intelligent Q&A system for books using RAG architecture. LLM processes natural language queries against vector-embedded book content via ChromaDB for precise, context-aware responses.</p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">ChromaDB</span><span class="tag">HuggingFace</span>
+                    </div>
+                    <a href="https://github.com/Suman18-bit/AskMyBook" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-cyan-400 text-xs font-medium hover:text-cyan-300 transition-colors group/l">
+                        <i data-lucide="github" class="w-3.5 h-3.5"></i> View Source <i data-lucide="arrow-up-right" class="w-3 h-3 transition-transform group-hover/l:translate-x-0.5 group-hover/l:-translate-y-0.5"></i>
+                    </a>
                 </div>
             </div>
+
             <div class="reveal d2 glass rounded-2xl overflow-hidden card border-gradient group">
-                <div class="project-visual bg-gradient-to-br from-purple-950/30 to-slate-950/50"><div class="grid-overlay"></div><i data-lucide="image" class="icon-bg text-purple-400"></i><div class="absolute top-4 right-4"><span class="text-[10px] font-mono font-medium uppercase tracking-widest text-purple-400/60 bg-purple-400/5 border border-purple-400/10 px-3 py-1 rounded-full">Computer Vision</span></div></div>
+                <div class="project-visual bg-gradient-to-br from-purple-950/30 to-slate-950/50">
+                    <div class="grid-overlay"></div>
+                    <i data-lucide="image" class="icon-bg text-purple-400"></i>
+                    <div class="absolute top-4 right-4"><span class="text-[10px] font-mono font-medium uppercase tracking-widest text-purple-400/60 bg-purple-400/5 border border-purple-400/10 px-3 py-1 rounded-full">CNN · LSTM · CV</span></div>
+                </div>
                 <div class="p-7">
                     <h3 class="text-lg font-medium mb-2 group-hover:text-purple-300 transition-colors">Smart Image Caption Generator</h3>
-                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-5">CNN-LSTM architecture that generates human-like descriptive captions for images. Combines feature extraction with sequence-to-sequence language modeling.</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">OpenCV</span><span class="tag">NumPy</span></div>
-                    <a href="https://github.com/Suman18-bit/Project(Smart)%20Image%20Caption%20Generator" target="_blank" class="inline-flex items-center gap-2 text-purple-400 text-xs font-medium hover:text-purple-300 transition-colors group/l"><i data-lucide="github" class="w-3.5 h-3.5"></i> View Source <i data-lucide="arrow-up-right" class="w-3 h-3 transition-transform group-hover/l:translate-x-0.5 group-hover/l:-translate-y-0.5"></i></a>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-5">CNN-LSTM architecture that extracts visual features and generates human-like descriptive captions. Demonstrates deep understanding of both computer vision and sequence modeling.</p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">OpenCV</span><span class="tag">NumPy</span>
+                    </div>
+                    <a href="https://github.com/Suman18-bit/Project(Smart)" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-purple-400 text-xs font-medium hover:text-purple-300 transition-colors group/l">
+                        <i data-lucide="github" class="w-3.5 h-3.5"></i> View Source <i data-lucide="arrow-up-right" class="w-3 h-3 transition-transform group-hover/l:translate-x-0.5 group-hover/l:-translate-y-0.5"></i>
+                    </a>
                 </div>
             </div>
+
             <div class="reveal d3 glass rounded-2xl overflow-hidden card border-gradient group">
-                <div class="project-visual bg-gradient-to-br from-emerald-950/30 to-slate-950/50"><div class="grid-overlay"></div><i data-lucide="clapperboard" class="icon-bg text-emerald-400"></i><div class="absolute top-4 right-4"><span class="text-[10px] font-mono font-medium uppercase tracking-widest text-emerald-400/60 bg-emerald-400/5 border border-emerald-400/10 px-3 py-1 rounded-full">Data Science</span></div></div>
+                <div class="project-visual bg-gradient-to-br from-emerald-950/30 to-slate-950/50">
+                    <div class="grid-overlay"></div>
+                    <i data-lucide="clapperboard" class="icon-bg text-emerald-400"></i>
+                    <div class="absolute top-4 right-4"><span class="text-[10px] font-mono font-medium uppercase tracking-widest text-emerald-400/60 bg-emerald-400/5 border border-emerald-400/10 px-3 py-1 rounded-full">ML · Data Science</span></div>
+                </div>
                 <div class="p-7">
                     <h3 class="text-lg font-medium mb-2 group-hover:text-emerald-300 transition-colors">Movie Recommendation System</h3>
-                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-5">Content-based + collaborative filtering engine with a Streamlit UI. Features similarity algorithms and data processing pipelines for personalized suggestions.</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">Streamlit</span></div>
-                    <a href="https://github.com/Suman18-bit/Movie-Recommendation-System-" target="_blank" class="inline-flex items-center gap-2 text-emerald-400 text-xs font-medium hover:text-emerald-300 transition-colors group/l"><i data-lucide="github" class="w-3.5 h-3.5"></i> View Source <i data-lucide="arrow-up-right" class="w-3 h-3 transition-transform group-hover/l:translate-x-0.5 group-hover/l:-translate-y-0.5"></i></a>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-5">Hybrid recommendation engine combining content-based and collaborative filtering. Features complete data pipeline, cosine similarity algorithms, and Streamlit web interface.</p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">Streamlit</span>
+                    </div>
+                    <a href="https://github.com/Suman18-bit/Movie-Recommendation-System-" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-emerald-400 text-xs font-medium hover:text-emerald-300 transition-colors group/l">
+                        <i data-lucide="github" class="w-3.5 h-3.5"></i> View Source <i data-lucide="arrow-up-right" class="w-3 h-3 transition-transform group-hover/l:translate-x-0.5 group-hover/l:-translate-y-0.5"></i>
+                    </a>
                 </div>
             </div>
+
             <div class="reveal d4 glass rounded-2xl overflow-hidden card border-gradient group">
-                <div class="project-visual bg-gradient-to-br from-amber-950/30 to-slate-950/50"><div class="grid-overlay"></div><i data-lucide="smile" class="icon-bg text-amber-400"></i><div class="absolute top-4 right-4"><span class="text-[10px] font-mono font-medium uppercase tracking-widest text-amber-400/60 bg-amber-400/5 border border-amber-400/10 px-3 py-1 rounded-full">Real-time AI</span></div></div>
+                <div class="project-visual bg-gradient-to-br from-amber-950/30 to-slate-950/50">
+                    <div class="grid-overlay"></div>
+                    <i data-lucide="smile" class="icon-bg text-amber-400"></i>
+                    <div class="absolute top-4 right-4"><span class="text-[10px] font-mono font-medium uppercase tracking-widest text-amber-400/60 bg-amber-400/5 border border-amber-400/10 px-3 py-1 rounded-full">Deep Learning · Real-time</span></div>
+                </div>
                 <div class="p-7">
                     <h3 class="text-lg font-medium mb-2 group-hover:text-amber-300 transition-colors">Emotion Detection System</h3>
-                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-5">Real-time facial emotion recognition from live video using deep learning. Detects and classifies emotions with CUDA-optimized inference for smooth performance.</p>
-                    <div class="flex flex-wrap gap-1.5 mb-6"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">TensorFlow</span><span class="tag">CUDA</span></div>
-                    <a href="https://github.com/Suman18-bit/Emotion_detection_Project" target="_blank" class="inline-flex items-center gap-2 text-amber-400 text-xs font-medium hover:text-amber-300 transition-colors group/l"><i data-lucide="github" class="w-3.5 h-3.5"></i> View Source <i data-lucide="arrow-up-right" class="w-3 h-3 transition-transform group-hover/l:translate-x-0.5 group-hover/l:-translate-y-0.5"></i></a>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-5">Real-time facial emotion recognition from live video using deep learning. Optimized inference pipeline with OpenCV for smooth, low-latency emotion classification across 7 categories.</p>
+                    <div class="flex flex-wrap gap-1.5 mb-6">
+                        <span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">TensorFlow</span><span class="tag">CUDA</span>
+                    </div>
+                    <a href="https://github.com/Suman18-bit/Emotion_detection_Project" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-amber-400 text-xs font-medium hover:text-amber-300 transition-colors group/l">
+                        <i data-lucide="github" class="w-3.5 h-3.5"></i> View Source <i data-lucide="arrow-up-right" class="w-3 h-3 transition-transform group-hover/l:translate-x-0.5 group-hover/l:-translate-y-0.5"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -626,13 +834,45 @@
 <!-- EDUCATION -->
 <section id="education" class="px-6 lg:px-10 py-28">
     <div class="max-w-7xl mx-auto">
-        <div class="reveal"><span class="section-label">04 — Education</span><h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Academic Background</h2><div class="section-divider"></div></div>
+        <div class="reveal">
+            <span class="section-label">04 — Education</span>
+            <h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Academic Background</h2>
+            <div class="section-divider"></div>
+        </div>
         <div class="max-w-3xl mt-16">
             <div class="relative pl-12">
                 <div class="timeline-track"></div>
-                <div class="reveal d1 relative pb-14"><div class="timeline-node"></div><div class="glass rounded-2xl p-7 card border-gradient"><div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-[10px] font-mono font-semibold uppercase tracking-widest text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">Current</span><span class="text-slate-600 text-xs font-mono">Jul 2024 — Aug 2028</span></div><h3 class="text-[17px] font-medium mb-1">B.Tech in Computer Science & Engineering</h3><p class="text-cyan-400/80 text-sm font-light mb-4">Swami Vivekananda University, Kolkata</p><p class="text-slate-500 font-light text-sm leading-relaxed mb-4">Specializing in AI/ML, Data Science, and Software Engineering. Strong foundations in algorithms, system design, and machine learning.</p><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span class="text-emerald-400 text-sm font-medium font-mono">Grade: A+</span></div></div></div>
-                <div class="reveal d2 relative pb-14"><div class="timeline-node purple"></div><div class="glass rounded-2xl p-7 card"><div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-slate-600 text-xs font-mono">May 2022 — Apr 2024</span></div><h3 class="text-[17px] font-medium mb-1">Higher Secondary — Class 12</h3><p class="text-purple-400/80 text-sm font-light mb-4">WBCHSE — Science Stream</p><p class="text-slate-500 font-light text-sm leading-relaxed">Physics, Chemistry, Mathematics & Biology. Strong analytical foundations.</p></div></div>
-                <div class="reveal d3 relative"><div class="timeline-node amber"></div><div class="glass rounded-2xl p-7 card"><div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-slate-600 text-xs font-mono">Jan 2021 — Apr 2022</span></div><h3 class="text-[17px] font-medium mb-1">Secondary — Class 10</h3><p class="text-amber-400/80 text-sm font-light mb-4">WBBSE</p><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span class="text-emerald-400 text-sm font-medium font-mono">Grade: A</span></div></div></div>
+                <div class="reveal d1 relative pb-14">
+                    <div class="timeline-node"></div>
+                    <div class="glass rounded-2xl p-7 card border-gradient">
+                        <div class="flex flex-wrap items-center gap-3 mb-4">
+                            <span class="text-[10px] font-mono font-semibold uppercase tracking-widest text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">Current</span>
+                            <span class="text-slate-600 text-xs font-mono">Jul 2024 — Aug 2028</span>
+                        </div>
+                        <h3 class="text-[17px] font-medium mb-1">B.Tech in Computer Science & Engineering</h3>
+                        <p class="text-cyan-400/80 text-sm font-light mb-4">Swami Vivekananda University, Kolkata</p>
+                        <p class="text-slate-500 font-light text-sm leading-relaxed mb-4">Specializing in AI/ML, Data Science, and Software Engineering. Strong foundation in DSA, system design, and applied machine learning.</p>
+                        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span class="text-emerald-400 text-sm font-medium font-mono">Grade: A+</span></div>
+                    </div>
+                </div>
+                <div class="reveal d2 relative pb-14">
+                    <div class="timeline-node purple"></div>
+                    <div class="glass rounded-2xl p-7 card">
+                        <div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-slate-600 text-xs font-mono">May 2022 — Apr 2024</span></div>
+                        <h3 class="text-[17px] font-medium mb-1">Higher Secondary — Class 12</h3>
+                        <p class="text-purple-400/80 text-sm font-light mb-4">WBCHSE — Science Stream</p>
+                        <p class="text-slate-500 font-light text-sm leading-relaxed">Physics, Chemistry, Mathematics & Biology. Developed strong analytical and quantitative reasoning skills.</p>
+                    </div>
+                </div>
+                <div class="reveal d3 relative">
+                    <div class="timeline-node amber"></div>
+                    <div class="glass rounded-2xl p-7 card">
+                        <div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-slate-600 text-xs font-mono">Jan 2021 — Apr 2022</span></div>
+                        <h3 class="text-[17px] font-medium mb-1">Secondary — Class 10</h3>
+                        <p class="text-amber-400/80 text-sm font-light mb-4">WBBSE</p>
+                        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span class="text-emerald-400 text-sm font-medium font-mono">Grade: A</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -643,20 +883,33 @@
 <!-- SKILLS -->
 <section id="skills" class="px-6 lg:px-10 py-28">
     <div class="max-w-7xl mx-auto">
-        <div class="reveal"><span class="section-label">05 — Skills</span><h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Technical Arsenal</h2><div class="section-divider"></div></div>
+        <div class="reveal">
+            <span class="section-label">05 — Skills</span>
+            <h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Technical Arsenal</h2>
+            <div class="section-divider"></div>
+        </div>
         <div class="grid lg:grid-cols-3 gap-6 mt-16">
             <div class="reveal d1 glass rounded-2xl p-7 card border-gradient">
-                <div class="flex items-center gap-4 mb-2"><div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center"><i data-lucide="globe" class="w-5 h-5 text-cyan-400"></i></div><div><h3 class="text-white font-medium text-[15px]">Software Engineering</h3><p class="text-slate-600 text-[11px] font-mono">Backend · Web · Deployment</p></div></div>
+                <div class="flex items-center gap-4 mb-2">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center"><i data-lucide="globe" class="w-5 h-5 text-cyan-400"></i></div>
+                    <div><h3 class="text-white font-medium text-[15px]">Software Engineering</h3><p class="text-slate-600 text-[11px] font-mono">Backend · Web · Deployment</p></div>
+                </div>
                 <div class="skill-bar mt-5 mb-6"><div class="skill-bar-fill bg-gradient-to-r from-cyan-500 to-cyan-400" style="width:85%"></div></div>
                 <div class="flex flex-wrap gap-1.5"><span class="tag">Django</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Streamlit</span><span class="tag">Vercel</span><span class="tag">ChromaDB</span><span class="tag">Gradio</span><span class="tag">REST API</span></div>
             </div>
             <div class="reveal d2 glass rounded-2xl p-7 card border-gradient">
-                <div class="flex items-center gap-4 mb-2"><div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center"><i data-lucide="brain" class="w-5 h-5 text-purple-400"></i></div><div><h3 class="text-white font-medium text-[15px]">AI · ML · Data Science</h3><p class="text-slate-600 text-[11px] font-mono">Deep Learning · NLP · CV</p></div></div>
+                <div class="flex items-center gap-4 mb-2">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center"><i data-lucide="brain" class="w-5 h-5 text-purple-400"></i></div>
+                    <div><h3 class="text-white font-medium text-[15px]">AI · ML · Data Science</h3><p class="text-slate-600 text-[11px] font-mono">Deep Learning · NLP · CV</p></div>
+                </div>
                 <div class="skill-bar mt-5 mb-6"><div class="skill-bar-fill bg-gradient-to-r from-purple-500 to-purple-400" style="width:92%"></div></div>
                 <div class="flex flex-wrap gap-1.5"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">Scikit-learn</span><span class="tag">Keras</span><span class="tag">LangChain</span><span class="tag">HuggingFace</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">MLflow</span><span class="tag">OpenCV</span><span class="tag">CUDA</span></div>
             </div>
             <div class="reveal d3 glass rounded-2xl p-7 card border-gradient">
-                <div class="flex items-center gap-4 mb-2"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center"><i data-lucide="terminal" class="w-5 h-5 text-emerald-400"></i></div><div><h3 class="text-white font-medium text-[15px]">Languages · Tools · Cloud</h3><p class="text-slate-600 text-[11px] font-mono">DevOps · Infrastructure</p></div></div>
+                <div class="flex items-center gap-4 mb-2">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center"><i data-lucide="terminal" class="w-5 h-5 text-emerald-400"></i></div>
+                    <div><h3 class="text-white font-medium text-[15px]">Languages · Tools · Cloud</h3><p class="text-slate-600 text-[11px] font-mono">DevOps · Infrastructure</p></div>
+                </div>
                 <div class="skill-bar mt-5 mb-6"><div class="skill-bar-fill bg-gradient-to-r from-emerald-500 to-emerald-400" style="width:78%"></div></div>
                 <div class="flex flex-wrap gap-1.5"><span class="tag">C</span><span class="tag">C++</span><span class="tag">Kotlin</span><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GCP</span><span class="tag">PostgreSQL</span><span class="tag">VS Code</span><span class="tag">Linux</span><span class="tag">GH Actions</span></div>
             </div>
@@ -670,8 +923,16 @@
 <section id="certifications" class="px-6 lg:px-10 py-28">
     <div class="max-w-7xl mx-auto">
         <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <div><span class="section-label">06 — Certifications</span><h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Credentials</h2><div class="section-divider"></div><p class="text-slate-500 font-light text-[15px] mt-6 max-w-lg">17 certifications from industry leaders — Microsoft, Qualcomm, LinkedIn Learning, HP, and more.</p></div>
-            <button onclick="toggleCerts()" class="btn-ghost btn-sm self-start md:self-auto flex-shrink-0"><i data-lucide="chevrons-down" class="w-4 h-4" id="cert-icon"></i><span id="cert-btn-text">Show All 17</span></button>
+            <div>
+                <span class="section-label">06 — Certifications</span>
+                <h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Verified Credentials</h2>
+                <div class="section-divider"></div>
+                <p class="text-slate-500 font-light text-[15px] mt-6 max-w-lg">17 certifications from Microsoft, LinkedIn, Qualcomm, Saylor University, HP, Great Learning, Simplilearn, and Unstop.</p>
+            </div>
+            <button onclick="toggleCerts()" class="btn-ghost btn-sm self-start md:self-auto flex-shrink-0">
+                <i data-lucide="chevrons-down" class="w-4 h-4" id="cert-icon"></i>
+                <span id="cert-btn-text">Show All 17</span>
+            </button>
         </div>
         <div class="mt-12 grid md:grid-cols-2 gap-3" id="certs-container">
             <div class="reveal d1 cert-item glass rounded-xl p-5 flex items-center gap-4"><div class="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i></div><div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate">Advance Your Skills in NLP</h4><p class="text-slate-600 text-[11px] font-mono">LinkedIn · Jun 2026</p></div></div>
@@ -697,211 +958,427 @@
 
 <div class="sep max-w-7xl mx-auto"></div>
 
-<!-- CONTACT — Social Links Only -->
+<!-- CONTACT -->
 <section id="contact" class="px-6 lg:px-10 py-28">
-    <div class="max-w-4xl mx-auto text-center">
-        <div class="reveal"><span class="section-label">07 — Connect</span><h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Let's Work Together</h2><div class="section-divider mx-auto"></div><p class="text-slate-500 font-light text-[15px] mt-6 max-w-lg mx-auto">I'm actively looking for internships and entry-level roles in AI/ML and Software Engineering. Reach out through any channel — I respond quickly.</p></div>
+    <div class="max-w-7xl mx-auto">
+        <div class="reveal">
+            <span class="section-label">07 — Contact</span>
+            <h2 class="text-3xl md:text-4xl font-medium tracking-[-0.025em] mt-4 mb-2">Get In Touch</h2>
+            <div class="section-divider"></div>
+        </div>
 
-        <div class="reveal d1 mt-14">
-            <a href="mailto:sethn533@gmail.com" class="btn-hire inline-flex text-base px-10 py-5">
-                <i data-lucide="zap" class="w-5 h-5"></i> Hire Me — Email Now
+        <!-- Hire Banner -->
+        <div class="reveal d1 mt-16 hire-banner rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(circle at 20% 50%, rgba(6,182,212,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(139,92,246,0.15) 0%, transparent 50%)"></div>
+            <div class="relative">
+                <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-6">
+                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span>
+                    <span class="text-emerald-400 text-xs font-medium">Available for Internships & Full-Time Roles</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-semibold tracking-tight mb-3">Looking for a motivated engineer<br class="hidden md:inline"> who ships real AI products?</h3>
+                <p class="text-slate-400 font-light text-[15px] max-w-xl mx-auto mb-8">I bring a rare combination of ML expertise and software engineering skills. Let's talk about how I can contribute to your team — I respond within 24 hours.</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="https://wa.me/919547111445?text=Hi%20Suman%2C%20I%27m%20reaching%20out%20about%20a%20role." target="_blank" rel="noopener" class="btn-hire">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Chat on WhatsApp
+                    </a>
+                    <a href="mailto:sethn533@gmail.com?subject=Opportunity%20for%20Suman%20Seth" class="btn-primary">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Send Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="btn-ghost">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Channels -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+            <a href="mailto:sethn533@gmail.com?subject=Opportunity%20for%20Suman%20Seth" class="reveal d1 contact-card glass rounded-xl p-6 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-500/20 transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5 text-rose-400"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono mb-1">Email</div>
+                    <div class="text-slate-200 text-sm font-light truncate">sethn533@gmail.com</div>
+                </div>
+            </a>
+
+            <a href="tel:+919547111445" class="reveal d2 contact-card glass rounded-xl p-6 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500/20 transition-colors">
+                    <i data-lucide="phone" class="w-5 h-5 text-amber-400"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono mb-1">Phone</div>
+                    <div class="text-slate-200 text-sm font-light truncate">+91 95471 11445</div>
+                </div>
+            </a>
+
+            <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="reveal d3 contact-card glass rounded-xl p-6 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500/20 transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono mb-1">WhatsApp</div>
+                    <div class="text-slate-200 text-sm font-light truncate">+91 95471 11445</div>
+                </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="reveal d4 contact-card glass rounded-xl p-6 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/20 transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono mb-1">LinkedIn</div>
+                    <div class="text-slate-200 text-sm font-light truncate">/in/suman-seth-b05417324</div>
+                </div>
+            </a>
+
+            <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="reveal d5 contact-card glass rounded-xl p-6 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-xl bg-slate-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-slate-500/20 transition-colors">
+                    <i data-lucide="github" class="w-5 h-5 text-slate-300"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono mb-1">GitHub</div>
+                    <div class="text-slate-200 text-sm font-light truncate">Suman18-bit</div>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/suman.seth.0007" target="_blank" rel="noopener" class="reveal d6 contact-card glass rounded-xl p-6 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 bg-facebook/20 group-hover:bg-facebook/30 transition-colors">
+                    <i data-lucide="facebook" class="w-5 h-5 text-blue-400"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono mb-1">Facebook</div>
+                    <div class="text-slate-200 text-sm font-light truncate">/suman.seth.0007</div>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="reveal d1 contact-card glass rounded-xl p-6 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 bg-instagram opacity-90 group-hover:opacity-100 transition-opacity">
+                    <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono mb-1">Instagram</div>
+                    <div class="text-slate-200 text-sm font-light truncate">@suman.seth.0007</div>
+                </div>
+            </a>
+
+            <a href="#hero" class="reveal d2 contact-card glass rounded-xl p-6 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/20 transition-colors">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-cyan-400"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono mb-1">Location</div>
+                    <div class="text-slate-200 text-sm font-light truncate">Nandigram-II, West Bengal</div>
+                </div>
             </a>
         </div>
 
-        <div class="reveal d2 grid sm:grid-cols-2 gap-4 mt-14 max-w-2xl mx-auto">
-            <!-- WhatsApp -->
-            <a href="https://wa.me/9195471111445?text=Hi%20Suman%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." target="_blank" class="social-btn wa">
-                <div class="w-11 h-11 rounded-xl bg-[#25D366]/15 flex items-center justify-center flex-shrink-0">
-                    <svg class="w-5 h-5 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <!-- Social Connect Strip -->
+        <div class="reveal d4 mt-8 glass rounded-2xl p-6 md:p-7 border-gradient">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center">
+                        <i data-lucide="share-2" class="w-5 h-5 text-cyan-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-medium text-sm">Connect on Social</h4>
+                        <p class="text-slate-600 text-xs font-light">Follow my journey and stay updated</p>
+                    </div>
                 </div>
-                <div class="text-left">
-                    <div class="text-white text-sm font-medium">WhatsApp</div>
-                    <div class="text-slate-500 text-xs font-light">+91 9547111445</div>
+                <div class="flex flex-wrap gap-2">
+                    <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 hover:bg-emerald-500/20 transition-all" aria-label="WhatsApp">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 hover:bg-blue-500/20 transition-all" aria-label="LinkedIn">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-white/10 transition-all" aria-label="GitHub">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://www.facebook.com/suman.seth.0007" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 hover:bg-blue-500/20 transition-all" aria-label="Facebook">
+                        <i data-lucide="facebook" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-instagram flex items-center justify-center text-white hover:opacity-90 transition-all" aria-label="Instagram">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
                 </div>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#25D366]/50 ml-auto flex-shrink-0"></i>
-            </a>
-
-            <!-- Email -->
-            <a href="mailto:sethn533@gmail.com" class="social-btn em">
-                <div class="w-11 h-11 rounded-xl bg-cyan-500/15 flex items-center justify-center flex-shrink-0">
-                    <i data-lucide="mail" class="w-5 h-5 text-cyan-400"></i>
-                </div>
-                <div class="text-left">
-                    <div class="text-white text-sm font-medium">Email</div>
-                    <div class="text-slate-500 text-xs font-light">sethn533@gmail.com</div>
-                </div>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-cyan-400/50 ml-auto flex-shrink-0"></i>
-            </a>
-
-            <!-- Phone -->
-            <a href="tel:+919547111445" class="social-btn ph">
-                <div class="w-11 h-11 rounded-xl bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
-                    <i data-lucide="phone" class="w-5 h-5 text-emerald-400"></i>
-                </div>
-                <div class="text-left">
-                    <div class="text-white text-sm font-medium">Phone</div>
-                    <div class="text-slate-500 text-xs font-light">+91 9547111445</div>
-                </div>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-emerald-400/50 ml-auto flex-shrink-0"></i>
-            </a>
-
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" class="social-btn li">
-                <div class="w-11 h-11 rounded-xl bg-[#0A66C2]/15 flex items-center justify-center flex-shrink-0">
-                    <i data-lucide="linkedin" class="w-5 h-5 text-[#0A66C2]"></i>
-                </div>
-                <div class="text-left">
-                    <div class="text-white text-sm font-medium">LinkedIn</div>
-                    <div class="text-slate-500 text-xs font-light">suman-seth-b05417324</div>
-                </div>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#0A66C2]/50 ml-auto flex-shrink-0"></i>
-            </a>
-
-            <!-- GitHub -->
-            <a href="https://github.com/Suman18-bit" target="_blank" class="social-btn gh">
-                <div class="w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0">
-                    <i data-lucide="github" class="w-5 h-5 text-white"></i>
-                </div>
-                <div class="text-left">
-                    <div class="text-white text-sm font-medium">GitHub</div>
-                    <div class="text-slate-500 text-xs font-light">Suman18-bit</div>
-                </div>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-white/30 ml-auto flex-shrink-0"></i>
-            </a>
-
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/suman.seth.0007" target="_blank" class="social-btn fb">
-                <div class="w-11 h-11 rounded-xl bg-[#3B5998]/15 flex items-center justify-center flex-shrink-0">
-                    <svg class="w-5 h-5 text-[#3B5998]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                </div>
-                <div class="text-left">
-                    <div class="text-white text-sm font-medium">Facebook</div>
-                    <div class="text-slate-500 text-xs font-light">suman.seth.0007</div>
-                </div>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#3B5998]/50 ml-auto flex-shrink-0"></i>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" class="social-btn ig sm:col-span-2">
-                <div class="w-11 h-11 rounded-xl bg-[#E1306C]/15 flex items-center justify-center flex-shrink-0">
-                    <svg class="w-5 h-5 text-[#E1306C]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                </div>
-                <div class="text-left">
-                    <div class="text-white text-sm font-medium">Instagram</div>
-                    <div class="text-slate-500 text-xs font-light">@suman.seth.0007</div>
-                </div>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#E1306C]/50 ml-auto flex-shrink-0"></i>
-            </a>
-        </div>
-
-        <div class="reveal d3 mt-14 glass rounded-xl p-5 inline-flex items-center gap-3">
-            <i data-lucide="map-pin" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
-            <span class="text-slate-400 text-sm font-light">Bayal, Nandigram-II, West Bengal, India, 721656</span>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="px-6 lg:px-10 py-12 border-t border-white/[0.03]">
+<footer class="px-6 lg:px-10 py-10 border-t border-white/[0.04]">
     <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center"><span class="text-cyan-400 font-semibold text-[10px] font-mono">SS</span></div>
-                <div><span class="text-slate-500 text-xs font-light">©Suman_Seth</span><span class="text-slate-700 text-xs font-light mx-2">·</span><span class="text-slate-600 text-xs font-light">Open to Work</span></div>
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center">
+                    <span class="text-cyan-400 font-semibold text-xs font-mono">SS</span>
+                </div>
+                <div>
+                    <div class="text-white text-sm font-medium leading-tight">Suman Seth</div>
+                    <div class="text-slate-600 text-[10px] font-mono tracking-wider">ENGINEER · DATA SCIENTIST</div>
+                </div>
+            </a>
+            <div class="flex items-center gap-2">
+                <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all" aria-label="WhatsApp">
+                    <i data-lucide="message-circle" class="w-[16px] h-[16px]"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-blue-400 hover:bg-blue-500/10 transition-all" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" class="w-[16px] h-[16px]"></i>
+                </a>
+                <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/10 transition-all" aria-label="GitHub">
+                    <i data-lucide="github" class="w-[16px] h-[16px]"></i>
+                </a>
+                <a href="https://www.facebook.com/suman.seth.0007" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-blue-400 hover:bg-blue-500/10 transition-all" aria-label="Facebook">
+                    <i data-lucide="facebook" class="w-[16px] h-[16px]"></i>
+                </a>
+                <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-pink-400 hover:bg-pink-500/10 transition-all" aria-label="Instagram">
+                    <i data-lucide="instagram" class="w-[16px] h-[16px]"></i>
+                </a>
+                <a href="mailto:sethn533@gmail.com" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-all" aria-label="Email">
+                    <i data-lucide="mail" class="w-[16px] h-[16px]"></i>
+                </a>
             </div>
-            <div class="flex items-center gap-5">
-                <a href="https://github.com/Suman18-bit" target="_blank" class="text-slate-600 hover:text-white transition-colors"><i data-lucide="github" class="w-4 h-4"></i></a>
-                <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" class="text-slate-600 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                <a href="https://www.facebook.com/suman.seth.0007" target="_blank" class="text-slate-600 hover:text-white transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" class="text-slate-600 hover:text-white transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                <a href="mailto:sethn533@gmail.com" class="text-slate-600 hover:text-white transition-colors"><i data-lucide="mail" class="w-4 h-4"></i></a>
+        </div>
+        <div class="sep mb-6"></div>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="text-slate-600 text-xs font-light">© <span id="footer-year"></span> Suman Seth. Built from scratch with passion.</span>
+            <div class="flex items-center gap-6">
+                <a href="#hero" class="footer-link">Back to top ↑</a>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- Back to Top -->
-<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-8 right-8 w-11 h-11 rounded-xl glass flex items-center justify-center text-slate-500 hover:text-white hover:border-white/10 transition-all z-40 opacity-0 pointer-events-none" style="transition:opacity .4s,transform .4s"><i data-lucide="arrow-up" class="w-4 h-4"></i></button>
-
 <script>
-// Cursor
-const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
-let cx=0,cy=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;dot.style.left=cx-3.5+'px';dot.style.top=cy-3.5+'px';});
-function animRing(){rx+=(cx-rx)*.14;ry+=(cy-ry)*.14;ring.style.left=rx-18+'px';ring.style.top=ry-18+'px';requestAnimationFrame(animRing);}
-animRing();
-document.querySelectorAll('a,button,.card,.cert-item,.tag,input,textarea').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('hover'));el.addEventListener('mouseleave',()=>ring.classList.remove('hover'));});
+    // ---------- Lucide icons ----------
+    lucide.createIcons();
 
-// Scroll progress
-const sp=document.getElementById('scroll-progress');
-window.addEventListener('scroll',()=>{const h=document.documentElement;sp.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%';});
+    // ---------- Footer year ----------
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-// Three.js
-(function(){const c=document.getElementById('three-canvas'),r=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});r.setSize(window.innerWidth,window.innerHeight);r.setPixelRatio(Math.min(window.devicePixelRatio,2));const s=new THREE.Scene();s.fog=new THREE.FogExp2(0x030712,0.0018);const cam=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);cam.position.set(0,12,35);cam.rotation.x=-0.2;
-const sc=2000,sg=new THREE.BufferGeometry(),sp=new Float32Array(sc*3),spc=new Float32Array(sc*3);
-for(let i=0;i<sc;i++){const t=Math.random()*Math.PI*2,p=Math.acos(2*Math.random()-1),rd=20+Math.random()*5;sp[i*3]=rd*Math.sin(p)*Math.cos(t);sp[i*3+1]=rd*Math.sin(p)*Math.sin(t);sp[i*3+2]=rd*Math.cos(p);const v=Math.random();spc[i*3]=v<.5?.13:.55;spc[i*3+1]=v<.5?.83:.36;spc[i*3+2]=v<.5?.93:.96;}
-sg.setAttribute('position',new THREE.BufferAttribute(sp,3));sg.setAttribute('color',new THREE.BufferAttribute(spc,3));
-const sm=new THREE.PointsMaterial({size:.08,vertexColors:true,transparent:true,opacity:.6,blending:THREE.AdditiveBlending,depthWrite:false});const sph=new THREE.Points(sg,sm);s.add(sph);
-const tc=2500,tg=new THREE.BufferGeometry(),tp=new Float32Array(tc*3);for(let i=0;i<tc;i++){tp[i*3]=(Math.random()-.5)*100;tp[i*3+1]=0;tp[i*3+2]=(Math.random()-.5)*100;}tg.setAttribute('position',new THREE.BufferAttribute(tp,3));
-const tm=new THREE.PointsMaterial({size:.12,color:0x22d3ee,transparent:true,opacity:.45,blending:THREE.AdditiveBlending,depthWrite:false});const ter=new THREE.Points(tg,tm);s.add(ter);
-const dc=400,dg=new THREE.BufferGeometry(),dp=new Float32Array(dc*3);for(let i=0;i<dc;i++){dp[i*3]=(Math.random()-.5)*60;dp[i*3+1]=Math.random()*30;dp[i*3+2]=(Math.random()-.5)*60;}dg.setAttribute('position',new THREE.BufferAttribute(dp,3));
-const dm=new THREE.PointsMaterial({size:.04,color:0xffffff,transparent:true,opacity:.25,blending:THREE.AdditiveBlending,depthWrite:false});const dus=new THREE.Points(dg,dm);s.add(dus);
-let mx=0,my=0;document.addEventListener('mousemove',e=>{mx=(e.clientX/window.innerWidth-.5)*2;my=(e.clientY/window.innerHeight-.5)*2;});
-function anim(){requestAnimationFrame(anim);const t=performance.now()*.001;sph.rotation.y+=.0003;sph.rotation.x=Math.sin(t*.1)*.1;
-const a=tg.attributes.position.array;for(let i=0;i<tc;i++){a[i*3+1]=Math.sin(a[i*3]*.08+t*.4)*1.5+Math.sin(a[i*3+2]*.04+t*.25)*1.5;}tg.attributes.position.needsUpdate=true;
-dus.rotation.y-=.00015;cam.position.x+=(mx*3-cam.position.x)*.005;cam.position.y+=(-my*2+12-cam.position.y)*.005;r.render(s,cam);}anim();
-window.addEventListener('resize',()=>{cam.aspect=window.innerWidth/window.innerHeight;cam.updateProjectionMatrix();r.setSize(window.innerWidth,window.innerHeight);});})();
+    // ---------- Reduced motion check ----------
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Lucide
-lucide.createIcons();
+    // ---------- Custom cursor ----------
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorRing = document.getElementById('cursor-ring');
+    if (window.matchMedia('(min-width: 769px)').matches) {
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+            cursorDot.style.transform = 'translate(-50%, -50%)';
+        });
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.15;
+            ringY += (mouseY - ringY) * 0.15;
+            cursorRing.style.left = ringX + 'px';
+            cursorRing.style.top = ringY + 'px';
+            cursorRing.style.transform = 'translate(-50%, -50%)';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+        document.querySelectorAll('a, button').forEach((el) => {
+            el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+        });
+    }
 
-// Typing
-const phrases=["B.Tech CSE Student","Software Engineer","Data Scientist","ML Engineer","NLP Enthusiast","Deep Learning Practitioner"];
-let pi=0,ci=0,del=false;const te=document.getElementById('typed-text');
-function typeLoop(){const c=phrases[pi];if(!del){te.textContent=c.substring(0,ci+1);ci++;if(ci===c.length){setTimeout(()=>{del=true;typeLoop();},2200);return;}setTimeout(typeLoop,55+Math.random()*35);}else{te.textContent=c.substring(0,ci-1);ci--;if(ci===0){del=false;pi=(pi+1)%phrases.length;setTimeout(typeLoop,350);return;}setTimeout(typeLoop,25);}}
-setTimeout(typeLoop,1200);
+    // ---------- Scroll progress bar ----------
+    const progressBar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = pct + '%';
+    }, { passive: true });
 
-// Reveal
-const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:.07,rootMargin:'0px 0px -35px 0px'});
-document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>ro.observe(el));
+    // ---------- Active nav link on scroll ----------
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                navLinks.forEach((link) => {
+                    link.classList.toggle('active', link.dataset.section === entry.target.id);
+                });
+            }
+        });
+    }, { threshold: 0.4, rootMargin: '-80px 0px -40% 0px' });
+    sections.forEach((s) => navObserver.observe(s));
 
-// Skill bars
-const bo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('animate');bo.unobserve(x.target);}});},{threshold:.5});
-document.querySelectorAll('.skill-bar-fill').forEach(el=>bo.observe(el));
+    // ---------- Floating social sidebar visibility ----------
+    const floatingSocial = document.getElementById('floating-social');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            floatingSocial.classList.add('visible');
+        } else {
+            floatingSocial.classList.remove('visible');
+        }
+    }, { passive: true });
 
-// Nav active
-const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-link[data-section]');
-const no=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){nls.forEach(l=>l.classList.remove('active'));const a=document.querySelector(`.nav-link[data-section="${x.target.id}"]`);if(a)a.classList.add('active');}});},{threshold:.25});
-secs.forEach(s=>no.observe(s));
+    // ---------- Mobile menu ----------
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    mobileToggle.addEventListener('click', () => {
+        const isOpen = mobileOverlay.classList.toggle('open');
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    function closeMobile() {
+        mobileOverlay.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+    }
 
-// Mobile
-const mt=document.getElementById('mobile-toggle'),mo=document.getElementById('mobile-overlay');let mO=false;
-mt.addEventListener('click',()=>{mO=!mO;mo.classList.toggle('open',mO);document.body.style.overflow=mO?'hidden':'';});
-function closeMobile(){mO=false;mo.classList.remove('open');document.body.style.overflow='';}
+    // ---------- Scroll reveal ----------
+    const revealTargets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealTargets.forEach((el) => revealObserver.observe(el));
 
-// Certs toggle
-let cO=false;
-function toggleCerts(){cO=!cO;document.querySelectorAll('.cert-hidden').forEach(el=>{el.style.display=cO?'flex':'none';});
-document.getElementById('cert-btn-text').textContent=cO?'Show Less':'Show All 17';
-document.getElementById('cert-icon').style.transform=cO?'rotate(180deg)':'rotate(0deg)';
-document.getElementById('cert-icon').style.transition='transform 0.3s';
-if(cO){document.querySelectorAll('.cert-hidden').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(8px)';requestAnimationFrame(()=>{el.style.transition='opacity .4s,transform .4s';el.style.opacity='1';el.style.transform='translateY(0)';});});}}
+    // hero reveals fire immediately since it's above the fold
+    document.querySelectorAll('#hero .reveal').forEach((el) => el.classList.add('visible'));
 
-// Stats
-const so=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const el=x.target,t=parseInt(el.dataset.count);let c=0;const iv=setInterval(()=>{c+=t/87;if(c>=t){c=t;clearInterval(iv);}el.textContent=Math.floor(c);},16);so.unobserve(el);}});},{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(el=>so.observe(el));
+    // ---------- Skill bar fill on scroll into view ----------
+    const skillBars = document.querySelectorAll('.skill-bar-fill');
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    skillBars.forEach((bar) => skillObserver.observe(bar));
 
-// Card glow
-document.querySelectorAll('.card').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});});
+    // ---------- Animated stat counters ----------
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseInt(el.dataset.count, 10);
+            if (prefersReducedMotion) {
+                el.textContent = target;
+            } else {
+                let current = 0;
+                const duration = 1200;
+                const stepTime = Math.max(16, duration / target);
+                const timer = setInterval(() => {
+                    current += 1;
+                    el.textContent = current;
+                    if (current >= target) clearInterval(timer);
+                }, stepTime);
+            }
+            counterObserver.unobserve(el);
+        });
+    }, { threshold: 0.6 });
+    counters.forEach((c) => counterObserver.observe(c));
 
-// Back to top
-const btt=document.getElementById('back-to-top');
-window.addEventListener('scroll',()=>{if(window.scrollY>500){btt.style.opacity='1';btt.style.pointerEvents='auto';btt.style.transform='translateY(0)';}else{btt.style.opacity='0';btt.style.pointerEvents='none';btt.style.transform='translateY(10px)';}});
+    // ---------- Typing effect in hero subline ----------
+    const typedEl = document.getElementById('typed-text');
+    const typedStrings = [
+        'B.Tech CSE Student · Software Engineer',
+        'AI/ML Engineer · Data Scientist',
+        'RAG Systems · LLM Applications',
+        'Open to Internships & Full-Time Roles'
+    ];
+    if (prefersReducedMotion) {
+        typedEl.textContent = typedStrings[0];
+    } else {
+        let strIndex = 0, charIndex = 0, deleting = false;
+        function typeLoop() {
+            const current = typedStrings[strIndex];
+            if (!deleting) {
+                charIndex++;
+                typedEl.textContent = current.slice(0, charIndex);
+                if (charIndex === current.length) {
+                    deleting = true;
+                    setTimeout(typeLoop, 1800);
+                    return;
+                }
+            } else {
+                charIndex--;
+                typedEl.textContent = current.slice(0, charIndex);
+                if (charIndex === 0) {
+                    deleting = false;
+                    strIndex = (strIndex + 1) % typedStrings.length;
+                }
+            }
+            setTimeout(typeLoop, deleting ? 35 : 55);
+        }
+        typeLoop();
+    }
 
-// Nav hide/show
-let ls=0;const nav=document.querySelector('nav');
-window.addEventListener('scroll',()=>{const c=window.scrollY;if(c>ls&&c>200){nav.style.transform='translateY(-100%)';nav.style.transition='transform .3s ease';}else{nav.style.transform='translateY(0)';}ls=c;});
+    // ---------- Certifications show more/less ----------
+    function toggleCerts() {
+        const hidden = document.querySelectorAll('.cert-hidden');
+        const btnText = document.getElementById('cert-btn-text');
+        const icon = document.getElementById('cert-icon');
+        const isShowing = hidden[0] && hidden[0].style.display !== 'none';
+        hidden.forEach((el) => { el.style.display = isShowing ? 'none' : 'flex'; });
+        btnText.textContent = isShowing ? 'Show All 17' : 'Show Less';
+        icon.setAttribute('data-lucide', isShowing ? 'chevrons-down' : 'chevrons-up');
+        lucide.createIcons();
+    }
+
+    // ---------- Three.js particle field background ----------
+    (function initParticles() {
+        const canvas = document.getElementById('three-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const particleCount = window.innerWidth < 768 ? 350 : 900;
+        const positions = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particleCount; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 16;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+        }
+        const geometry = new THREE.BufferGeometry();
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+        const material = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0x22d3ee,
+            transparent: true,
+            opacity: 0.5,
+        });
+        const points = new THREE.Points(geometry, material);
+        scene.add(points);
+
+        function resize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener('resize', resize);
+
+        function animate() {
+            if (!prefersReducedMotion) {
+                points.rotation.y += 0.0007;
+                points.rotation.x += 0.0002;
+                requestAnimationFrame(animate);
+            }
+            renderer.render(scene, camera);
+        }
+        animate();
+    })();
 </script>
-
 </body>
 </html>
