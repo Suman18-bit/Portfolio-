@@ -420,10 +420,78 @@
                         With <span class="text-white font-normal">17+ certifications</span> from Microsoft, LinkedIn Learning, Qualcomm, and Saylor University, I maintain a disciplined approach to continuous learning. I'm currently seeking <span class="text-cyan-400">internships and entry-level roles</span> where I can contribute to meaningful AI/ML projects.
                     </p>
                 </div>
-                <div class="flex flex-wrap gap-3 mt-10">
-                    <a href="Resume.pdf" download>
-  <button>Download Resume</button>
-</a>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+
+    .resume-btn {
+      background: linear-gradient(45deg, #4CAF50, #45a049);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      animation: pulse 2s infinite;
+    }
+
+    /* Hover animation: glow + bounce */
+    .resume-btn:hover {
+      transform: scale(1.1) rotate(2deg);
+      background: linear-gradient(45deg, #45a049, #4CAF50);
+      box-shadow: 0 0 20px #4CAF50;
+    }
+
+    /* Click animation */
+    .resume-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Pulse animation */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px rgba(76,175,80,0.6); }
+      50% { box-shadow: 0 0 25px rgba(76,175,80,1); }
+      100% { box-shadow: 0 0 10px rgba(76,175,80,0.6); }
+    }
+
+    /* Ripple effect */
+    .resume-btn::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      background: rgba(255,255,255,0.3);
+      transform: skewX(-20deg);
+    }
+
+    .resume-btn:hover::after {
+      animation: shine 1s forwards;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      100% { left: 200%; }
+    }
+  </style>
+</head>
+<body>
+  <button class="resume-btn" onclick="window.open('Resume.pdf', '_blank')">
+    View Resume
+  </button>
+</body>
+
+
                     <a href="mailto:sethn533@gmail.com" class="btn-ghost btn-sm"><i data-lucide="mail" class="w-3.5 h-3.5"></i> Email Me</a>
                 </div>
             </div>
