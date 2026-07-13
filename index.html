@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suman Seth — Software Engineer & Data Scientist</title>
+    <title>Suman Seth — Freelancer · Software Engineer & Data Scientist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +33,6 @@
         }
         @media (min-width: 769px) { body { cursor: none; } }
 
-        /* Premium Noise Texture */
         body::before {
             content: "";
             position: fixed;
@@ -45,44 +43,43 @@
             opacity: 0.6;
         }
 
-        ::selection { background: rgba(6,182,212,0.25); color: #ecfeff; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #06b6d4, #8b5cf6); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #22d3ee, #a78bfa); }
+        ::selection { background: rgba(236,72,153,0.3); color: #fdf2f8; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #06b6d4, #8b5cf6, #ec4899); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #22d3ee, #a78bfa, #f472b6); }
 
         .cursor-dot {
-            width: 8px; height: 8px; background: #22d3ee; border-radius: 50%;
+            width: 8px; height: 8px; background: #ec4899; border-radius: 50%;
             position: fixed; pointer-events: none; z-index: 9999;
             mix-blend-mode: difference; transition: transform 0.1s ease;
-            box-shadow: 0 0 10px #22d3ee;
+            box-shadow: 0 0 12px #ec4899;
         }
         .cursor-ring {
-            width: 36px; height: 36px; border: 1px solid rgba(34,211,238,0.4);
+            width: 36px; height: 36px; border: 1px solid rgba(236,72,153,0.5);
             border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998;
             transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
         }
         .cursor-ring.hover {
-            width: 64px; height: 64px; border-color: rgba(236,72,153,0.6);
-            background: rgba(236,72,153,0.05);
+            width: 64px; height: 64px; border-color: rgba(139,92,246,0.7);
+            background: rgba(139,92,246,0.05);
         }
         @media (max-width: 768px) { .cursor-dot, .cursor-ring { display: none; } }
 
         .scroll-progress {
             position: fixed; top: 0; left: 0; height: 4px;
-            background: linear-gradient(to right, #06b6d4, #8b5cf6, #ec4899, #f59e0b, #06b6d4);
+            background: linear-gradient(to right, #06b6d4, #8b5cf6, #ec4899, #f59e0b, #10b981, #06b6d4);
             background-size: 300% 100%; animation: gShift 3s ease infinite;
             z-index: 100; transition: width 0.1s linear;
-            box-shadow: 0 0 15px rgba(6,182,212,0.7);
+            box-shadow: 0 0 20px rgba(236,72,153,0.6);
         }
         @keyframes gShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
 
         #three-canvas {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: -10; opacity: 0.4; transition: opacity 1s;
+            z-index: -10; opacity: 0.45; transition: opacity 1s;
         }
 
-        /* Glassmorphism Enhancements */
         .glass {
             background: rgba(255,255,255,0.02); backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06);
@@ -102,10 +99,9 @@
 
         h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
 
-        /* Animated Multi-Color Gradient Text */
         .text-gradient {
-            background: linear-gradient(135deg, #67e8f9, #06b6d4, #8b5cf6, #ec4899, #f59e0b, #67e8f9);
-            background-size: 300% 300%;
+            background: linear-gradient(135deg, #67e8f9, #06b6d4, #8b5cf6, #ec4899, #f59e0b, #10b981, #67e8f9);
+            background-size: 400% 400%;
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
             animation: gradient-flow 8s ease infinite;
         }
@@ -119,7 +115,6 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
         
-        /* Animated Gradient Border */
         .border-gradient { position: relative; }
         .border-gradient::before {
             content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
@@ -129,14 +124,11 @@
             transition: opacity 0.3s;
         }
 
-        /* Buttons */
         .btn-primary, .btn-cta, .btn-ghost, .btn-hire, .btn-resume {
             position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 8px; 
             text-decoration: none; letter-spacing: -0.01em; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
             font-weight: 600; font-size: 13px; padding: 14px 28px; border-radius: 12px; border: none;
         }
-        
-        /* Shine Effect */
         .btn-primary::after, .btn-cta::after, .btn-hire::after, .btn-resume::after {
             content: ''; position: absolute; top: 0; left: -150%; width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
@@ -145,27 +137,20 @@
         .btn-primary:hover::after, .btn-cta:hover::after, .btn-hire:hover::after, .btn-resume:hover::after {
             left: 150%;
         }
-
         .btn-primary { background: #fff; color: #030712; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(255,255,255,0.2); }
-
-        .btn-cta { background: linear-gradient(135deg, #06b6d4, #0891b2); color: #000; }
-        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(6,182,212,0.5); }
-
+        .btn-cta { background: linear-gradient(135deg, #06b6d4, #8b5cf6); color: #fff; }
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(139,92,246,0.5); }
         .btn-ghost { background: transparent; color: #cbd5e1; border: 1px solid rgba(255,255,255,0.08); }
         .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); color: #fff; transform: translateY(-2px); }
-
-        .btn-hire { background: linear-gradient(135deg, #10b981, #059669); color: #fff; font-size: 14px; padding: 16px 36px; border-radius: 12px; box-shadow: 0 4px 20px rgba(16,185,129,0.2); }
+        .btn-hire { background: linear-gradient(135deg, #10b981, #06b6d4); color: #fff; font-size: 14px; padding: 16px 36px; border-radius: 12px; box-shadow: 0 4px 20px rgba(16,185,129,0.3); }
         .btn-hire:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(16,185,129,0.5); }
-
-        .btn-resume { background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: #fff; box-shadow: 0 4px 20px rgba(139,92,246,0.2); }
-        .btn-resume:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(139,92,246,0.5); }
-
+        .btn-resume { background: linear-gradient(135deg, #8b5cf6, #ec4899); color: #fff; box-shadow: 0 4px 20px rgba(139,92,246,0.3); }
+        .btn-resume:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(236,72,153,0.5); }
         .btn-sm { padding: 10px 20px; font-size: 12px; border-radius: 10px; }
         .btn-xs { padding: 8px 16px; font-size: 11px; border-radius: 8px; }
         @media (max-width: 768px) { .btn-primary,.btn-cta,.btn-ghost,.btn-hire,.btn-resume { cursor: pointer; } }
 
-        /* 3D Tilt Card */
         .tilt-card {
             transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), border-color 0.5s, box-shadow 0.5s;
             transform-style: preserve-3d;
@@ -173,11 +158,10 @@
         }
         .tilt-card:hover { 
             border-color: rgba(255,255,255,0.12); 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(6,182,212,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(236,72,153,0.15);
         }
         .tilt-card .card-content { transform: translateZ(40px); }
 
-        /* Vibrant Tech Tags */
         .tag {
             display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 6px;
             font-size: 11px; font-weight: 500; font-family: 'JetBrains Mono', monospace;
@@ -186,22 +170,21 @@
         }
         .tag:hover { 
             background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(139,92,246,0.2), rgba(236,72,153,0.2)); 
-            border-color: transparent; 
-            color: #fff; 
+            border-color: transparent; color: #fff; 
             transform: translateY(-2px) scale(1.05); 
             box-shadow: 0 4px 15px rgba(139,92,246,0.3);
         }
 
         .section-label {
             font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em;
-            color: #22d3ee; font-family: 'JetBrains Mono', monospace;
+            color: #ec4899; font-family: 'JetBrains Mono', monospace;
         }
-        .section-divider { width: 40px; height: 2px; background: linear-gradient(to right, #22d3ee, #ec4899, transparent); margin-top: 16px; border-radius: 2px; }
+        .section-divider { width: 40px; height: 2px; background: linear-gradient(to right, #ec4899, #8b5cf6, #06b6d4, transparent); margin-top: 16px; border-radius: 2px; }
 
         .typing-cursor {
-            display: inline-block; width: 3px; height: 1.1em; background: #22d3ee;
+            display: inline-block; width: 3px; height: 1.1em; background: #ec4899;
             margin-left: 2px; vertical-align: text-bottom; animation: blink 1s step-end infinite;
-            box-shadow: 0 0 10px #22d3ee;
+            box-shadow: 0 0 10px #ec4899;
         }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
@@ -211,9 +194,8 @@
         .reveal-left.visible { opacity: 1; transform: translateX(0); }
         .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1); }
         .reveal-right.visible { opacity: 1; transform: translateX(0); }
-        .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}
+        .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}.d6{transition-delay:.48s}.d7{transition-delay:.56s}.d8{transition-delay:.64s}
 
-        /* Timeline Pulse Node */
         .timeline-track { position: absolute; left: 20px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(to bottom, rgba(34,211,238,0.4), rgba(139,92,246,0.4), rgba(236,72,153,0.3)); }
         .timeline-node { position: absolute; left: 13px; top: 6px; width: 16px; height: 16px; border-radius: 50%; border: 2px solid #22d3ee; background: #030712; z-index: 2; box-shadow: 0 0 15px rgba(34,211,238,0.6); }
         .timeline-node::after {
@@ -235,79 +217,248 @@
 
         .nav-link { color: #64748b; font-size: 13px; font-weight: 500; transition: color 0.3s; text-decoration: none; position: relative; letter-spacing: -0.01em; }
         .nav-link:hover { color: #e2e8f0; }
-        .nav-link.active { color: #22d3ee; }
-        .nav-link.active::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: linear-gradient(to right, #22d3ee, #ec4899); border-radius: 2px; box-shadow: 0 0 8px #22d3ee; }
+        .nav-link.active { color: #ec4899; }
+        .nav-link.active::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: linear-gradient(to right, #ec4899, #8b5cf6, #06b6d4); border-radius: 2px; box-shadow: 0 0 8px #ec4899; }
 
         .mobile-overlay { position: fixed; inset: 0; background: rgba(3,7,18,0.97); backdrop-filter: blur(30px); z-index: 45; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 28px; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
         .mobile-overlay.open { opacity: 1; pointer-events: all; }
         .mobile-overlay a { font-size: 24px; font-weight: 300; color: #94a3b8; text-decoration: none; transition: color 0.3s; font-family: 'Space Grotesk', sans-serif; }
-        .mobile-overlay a:hover { color: #22d3ee; }
+        .mobile-overlay a:hover { color: #ec4899; }
 
-        /* Dynamic Morphing Aurora Background */
         @keyframes aurora-move {
             0% { transform: translate(0, 0) scale(1); }
             33% { transform: translate(50px, -30px) scale(1.2); }
             66% { transform: translate(-30px, 40px) scale(0.9); }
             100% { transform: translate(0, 0) scale(1); }
         }
-        .glow-cyan { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 12s infinite ease-in-out; }
-        .glow-purple { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 16s infinite ease-in-out reverse; }
-        .glow-pink { position: absolute; width: 450px; height: 450px; background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 18s infinite ease-in-out; }
-        .glow-amber { position: absolute; width: 350px; height: 350px; background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 14s infinite ease-in-out reverse; }
+        .glow-cyan { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 12s infinite ease-in-out; }
+        .glow-purple { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 16s infinite ease-in-out reverse; }
+        .glow-pink { position: absolute; width: 450px; height: 450px; background: radial-gradient(circle, rgba(236,72,153,0.18) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 18s infinite ease-in-out; }
+        .glow-amber { position: absolute; width: 350px; height: 350px; background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 14s infinite ease-in-out reverse; }
+        .glow-emerald { position: absolute; width: 380px; height: 380px; background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 15s infinite ease-in-out; }
+        .glow-rose { position: absolute; width: 420px; height: 420px; background: radial-gradient(circle, rgba(244,63,94,0.13) 0%, transparent 70%); border-radius: 50%; pointer-events: none; filter: blur(40px); animation: aurora-move 17s infinite ease-in-out reverse; }
 
-        .sep { height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent); }
+        .sep { height: 1px; background: linear-gradient(to right, transparent, rgba(236,72,153,0.2), rgba(139,92,246,0.2), rgba(6,182,212,0.2), transparent); }
 
-        .hr-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 500; font-family: 'JetBrains Mono', monospace; background: linear-gradient(135deg, rgba(6,182,212,0.1), rgba(139,92,246,0.1)); border: 1px solid rgba(6,182,212,0.2); color: #67e8f9; }
+        .hr-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 500; font-family: 'JetBrains Mono', monospace; background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(139,92,246,0.15)); border: 1px solid rgba(236,72,153,0.3); color: #f9a8d4; }
 
-        .highlight-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, #06b6d4, #8b5cf6, #ec4899); opacity: 0; transition: opacity 0.3s; }
+        .freelance-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 24px; font-size: 12px; font-weight: 600; font-family: 'JetBrains Mono', monospace; background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(236,72,153,0.15), rgba(139,92,246,0.15)); border: 1px solid rgba(245,158,11,0.4); color: #fbbf24; box-shadow: 0 0 20px rgba(245,158,11,0.15); }
+        .freelance-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981; animation: pulse-dot 1.5s ease-in-out infinite; }
+        @keyframes pulse-dot { 0%,100%{opacity:1; transform:scale(1)} 50%{opacity:0.5; transform:scale(1.3)} }
+
+        .highlight-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, #06b6d4, #8b5cf6, #ec4899, #f59e0b); opacity: 0; transition: opacity 0.3s; }
         .highlight-card:hover::before { opacity: 1; }
-        
         .recruiter-stat { transition: transform 0.3s; }
         .recruiter-stat:hover { transform: translateY(-5px); }
 
-        /* Floating Icon Animation */
         @keyframes icon-float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(5deg); }
         }
         .float-icon { animation: icon-float 4s ease-in-out infinite; }
 
-        /* Infinite Marquee */
         .marquee-container { overflow: hidden; white-space: nowrap; padding: 20px 0; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
         .marquee { display: inline-block; animation: marquee 25s linear infinite; }
         .marquee-item { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #475569; margin: 0 25px; transition: color 0.3s; }
-        .marquee-item:hover { color: #22d3ee; }
-        .marquee-item i { display: inline-block; margin-right: 8px; color: #64748b; }
+        .marquee-item:hover { color: #ec4899; }
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
         
-        /* Floating social sidebar */
-        .floating-social { position: fixed; left: 20px; top: 50%; transform: translateY(-50%); z-index: 40; display: flex; flex-direction: column; gap: 10px; opacity: 0; pointer-events: none; transition: opacity 0.4s, transform 0.4s; }
+        /* ===== CERTIFICATION TABLE STYLES ===== */
+        .cert-table-wrap {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+            backdrop-filter: blur(20px);
+        }
+        .cert-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cert-table th {
+            text-align: left;
+            padding: 16px 24px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #64748b;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+        }
+        .cert-table td {
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .cert-table tr:last-child td {
+            border-bottom: none;
+        }
+        .cert-table tr {
+            transition: all 0.3s;
+        }
+        .cert-table tr:hover {
+            background: rgba(255,255,255,0.03);
+        }
+        .cert-table tr:hover td {
+            border-color: rgba(236,72,153,0.2);
+        }
+        .cert-rank {
+            font-family: 'JetBrains Mono', monospace;
+            color: #64748b;
+            font-weight: 600;
+            width: 80px;
+        }
+        .cert-name {
+            color: #e2e8f0;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .cert-table tr:hover .cert-name {
+            color: #ec4899;
+        }
+        .cert-issuer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+            color: #94a3b8;
+        }
+
+        /* ===== FLOATING SOCIAL SIDEBAR — CLEAN DARK MENU ===== */
+        .floating-social { 
+            position: fixed; left: 20px; top: 50%; transform: translateY(-50%); z-index: 40; 
+            display: flex; flex-direction: column; gap: 4px; opacity: 0; pointer-events: none; 
+            transition: opacity 0.4s, transform 0.4s; 
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
         .floating-social.visible { opacity: 1; pointer-events: all; }
-        .floating-social a { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); color: #64748b; transition: all 0.3s; text-decoration: none; }
-        .floating-social a:hover { transform: translateX(6px) scale(1.05); }
-        .floating-social a.whatsapp:hover { color: #25d366; border-color: rgba(37,211,102,0.4); background: rgba(37,211,102,0.08); box-shadow: 0 0 15px rgba(37,211,102,0.2); }
-        .floating-social a.linkedin:hover { color: #0a66c2; border-color: rgba(10,102,194,0.4); background: rgba(10,102,194,0.08); box-shadow: 0 0 15px rgba(10,102,194,0.2); }
-        .floating-social a.github:hover { color: #fff; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); box-shadow: 0 0 15px rgba(255,255,255,0.1); }
-        .floating-social a.facebook:hover { color: #1877f2; border-color: rgba(24,119,242,0.4); background: rgba(24,119,242,0.08); box-shadow: 0 0 15px rgba(24,119,242,0.2); }
-        .floating-social a.instagram:hover { color: #e1306c; border-color: rgba(225,48,108,0.4); background: rgba(225,48,108,0.08); box-shadow: 0 0 15px rgba(225,48,108,0.2); }
+        .floating-social a { 
+            width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; 
+            background: transparent; border: 1px solid transparent; 
+            transition: all 0.3s; text-decoration: none; position: relative;
+        }
+        .floating-social a:hover { 
+            transform: scale(1.1); 
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.1);
+        }
+        
+        .floating-social a.linkedin { color: #0a66c2; }
+        .floating-social a.linkedin:hover { 
+            color: #fff; background: #0a66c2; border-color: #0a66c2; 
+            box-shadow: 0 0 20px rgba(10,102,194,0.6); 
+        }
+        .floating-social a.github { color: #c4b5fd; }
+        .floating-social a.github:hover { 
+            color: #fff; background: linear-gradient(135deg, #333, #6d28d9); border-color: #a855f7; 
+            box-shadow: 0 0 20px rgba(168,85,247,0.6); 
+        }
+        .floating-social a.instagram { color: #ec4899; }
+        .floating-social a.instagram:hover { 
+            color: #fff; background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: #dc2743; 
+            box-shadow: 0 0 20px rgba(225,48,108,0.6); 
+        }
+        .floating-social a.facebook { color: #1877f2; }
+        .floating-social a.facebook:hover { 
+            color: #fff; background: #1877f2; border-color: #1877f2; 
+            box-shadow: 0 0 20px rgba(24,119,242,0.6); 
+        }
+        .floating-social a.whatsapp { color: #25d366; }
+        .floating-social a.whatsapp:hover { 
+            color: #fff; background: #25d366; border-color: #25d366; 
+            box-shadow: 0 0 20px rgba(37,211,102,0.6); 
+        }
         @media (max-width: 1024px) { .floating-social { display: none; } }
 
-        a:focus-visible, button:focus-visible { outline: 2px solid #22d3ee; outline-offset: 3px; border-radius: 4px; }
+        /* ===== HERO SOCIAL SHOWCASE — LARGE GLOWING ICONS ===== */
+        .social-showcase { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+        .social-icon-card {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            width: 60px; height: 60px; border-radius: 16px; text-decoration: none;
+            background: rgba(255,255,255,0.02); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08); 
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1); 
+            overflow: hidden;
+        }
+        .social-icon-card::before {
+            content: ''; position: absolute; inset: -2px; border-radius: 16px; padding: 2px;
+            opacity: 0; transition: opacity 0.4s; z-index: 0;
+        }
+        .social-icon-card svg { width: 28px; height: 28px; position: relative; z-index: 2; transition: all 0.3s; }
+        .social-icon-card:hover { transform: translateY(-6px) scale(1.08); }
+        .social-icon-card:hover::before { opacity: 1; }
+        
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color); }
+            50% { box-shadow: 0 0 30px var(--glow-color), 0 0 60px var(--glow-color); }
+        }
+        
+        .social-icon-card.linkedin { --glow-color: rgba(10,102,194,0.5); color: #0a66c2; }
+        .social-icon-card.linkedin::before { background: linear-gradient(135deg, #0a66c2, #004182); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+        .social-icon-card.linkedin:hover { color: #fff; animation: glow-pulse 1.5s ease-in-out infinite; }
+        
+        .social-icon-card.github { --glow-color: rgba(168,85,247,0.5); color: #c4b5fd; }
+        .social-icon-card.github::before { background: linear-gradient(135deg, #a855f7, #6d28d9); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+        .social-icon-card.github:hover { color: #fff; animation: glow-pulse 1.5s ease-in-out infinite; }
+        
+        .social-icon-card.instagram { --glow-color: rgba(225,48,108,0.5); color: #ec4899; }
+        .social-icon-card.instagram::before { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+        .social-icon-card.instagram:hover { color: #fff; animation: glow-pulse 1.5s ease-in-out infinite; }
+        
+        .social-icon-card.facebook { --glow-color: rgba(24,119,242,0.5); color: #3b82f6; }
+        .social-icon-card.facebook::before { background: linear-gradient(135deg, #1877f2, #0a4fb5); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+        .social-icon-card.facebook:hover { color: #fff; animation: glow-pulse 1.5s ease-in-out infinite; }
+        
+        .social-icon-card.whatsapp { --glow-color: rgba(37,211,102,0.5); color: #10b981; }
+        .social-icon-card.whatsapp::before { background: linear-gradient(135deg, #25d366, #128c7e); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+        .social-icon-card.whatsapp:hover { color: #fff; animation: glow-pulse 1.5s ease-in-out infinite; }
 
-        /* Hide default cursor on interactive elements when custom cursor is active */
+        .social-showcase-wrap {
+            position: relative; padding: 8px; border-radius: 24px;
+        }
+        .social-showcase-wrap::before {
+            content: ''; position: absolute; inset: 0; border-radius: 24px; padding: 1px;
+            background: linear-gradient(135deg, rgba(10,102,194,0.4), rgba(168,85,247,0.4), rgba(225,48,108,0.4), rgba(24,119,242,0.4), rgba(37,211,102,0.4));
+            background-size: 300% 300%; animation: gradient-flow 6s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+        }
+
+        a:focus-visible, button:focus-visible { outline: 2px solid #ec4899; outline-offset: 3px; border-radius: 4px; }
         @media (min-width: 769px) { a, button { cursor: none; } }
         
-        /* Certification Link Styling */
-        .cert-link {
-            text-decoration: none; color: inherit; transition: border-color 0.3s, transform 0.3s;
+        /* Footer social glow icons */
+        .footer-social {
+            width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; transition: all 0.3s; position: relative;
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
         }
-        .cert-link:hover {
-            border-color: rgba(255,255,255,0.12);
-            transform: translateY(-3px);
-        }
+        .footer-social svg { width: 20px; height: 20px; }
+        .footer-social.linkedin { color: #0a66c2; }
+        .footer-social.linkedin:hover { color: #fff; background: #0a66c2; box-shadow: 0 0 20px rgba(10,102,194,0.7); transform: translateY(-4px); }
+        .footer-social.github { color: #c4b5fd; }
+        .footer-social.github:hover { color: #fff; background: linear-gradient(135deg, #333, #6d28d9); box-shadow: 0 0 20px rgba(168,85,247,0.7); transform: translateY(-4px); }
+        .footer-social.instagram { color: #ec4899; }
+        .footer-social.instagram:hover { color: #fff; background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); box-shadow: 0 0 20px rgba(225,48,108,0.7); transform: translateY(-4px); }
+        .footer-social.facebook { color: #3b82f6; }
+        .footer-social.facebook:hover { color: #fff; background: #1877f2; box-shadow: 0 0 20px rgba(24,119,242,0.7); transform: translateY(-4px); }
+        .footer-social.whatsapp { color: #10b981; }
+        .footer-social.whatsapp:hover { color: #fff; background: #25d366; box-shadow: 0 0 20px rgba(37,211,102,0.7); transform: translateY(-4px); }
     </style>
 </head>
 <body>
@@ -322,27 +473,36 @@
 <div class="glow-purple" style="top:40%;right:-8%"></div>
 <div class="glow-pink" style="bottom:10%;left:30%;"></div>
 <div class="glow-amber" style="top:80%;right:20%;"></div>
+<div class="glow-emerald" style="top:25%;right:35%;"></div>
+<div class="glow-rose" style="bottom:40%;left:-5%;"></div>
 
-<!-- Floating Social Sidebar -->
+<!-- Floating Social Sidebar with Official SVGs -->
 <div class="floating-social" id="floating-social">
-    <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="whatsapp" aria-label="WhatsApp"><i data-lucide="message-circle" class="w-[18px] h-[18px]"></i></a>
-    <a href="mailto:sethn533@gmail.com" class="linkedin" aria-label="Email"><i data-lucide="mail" class="w-[18px] h-[18px]"></i></a>
-    <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-[18px] h-[18px]"></i></a>
-    <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i data-lucide="github" class="w-[18px] h-[18px]"></i></a>
-    <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="instagram" aria-label="Instagram"><i data-lucide="instagram" class="w-[18px] h-[18px]"></i></a>
-    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="facebook" aria-label="Facebook"><i data-lucide="facebook" class="w-[18px] h-[18px]"></i></a>
+    <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="whatsapp" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a href="mailto:sethn533@gmail.com" class="whatsapp" aria-label="Email"><i data-lucide="mail" class="w-[20px] h-[20px]"></i></a>
+    <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="github" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.755-1.333-1.755-1.087-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.535-1.523.117-3.176 0 0 1.008-.323 3.3 1.23A11.5 11.5 0 0 1 12 5.803c1.02.005 2.045.138 3.003.404 2.29-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.624-5.48 5.92.43.372.814 1.103.814 2.222 0 1.604-.014 2.896-.014 3.286 0 .32.218.694.825.576C20.565 21.795 24 17.298 24 12 24 5.37 18.627 0 12 0z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+    </a>
 </div>
 
 <!-- NAV -->
 <nav class="glass-nav fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6 lg:px-10">
     <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
         <a href="#hero" class="flex items-center gap-3 group">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center group-hover:border-cyan-500/40 transition-all duration-300 group-hover:rotate-12">
-                <span class="text-cyan-400 font-semibold text-xs font-mono">SS</span>
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center group-hover:border-pink-500/40 transition-all duration-300 group-hover:rotate-12">
+                <span class="text-pink-400 font-semibold text-xs font-mono">SS</span>
             </div>
             <div class="hidden sm:block">
                 <div class="text-white text-sm font-medium leading-tight font-display">Suman Seth</div>
-                <div class="text-slate-600 text-[10px] font-mono tracking-wider">ENGINEER · DATA SCIENTIST</div>
+                <div class="text-slate-600 text-[10px] font-mono tracking-wider">FREELANCER · ENGINEER · DATA SCIENTIST</div>
             </div>
         </a>
         <div class="hidden lg:flex items-center gap-9">
@@ -355,12 +515,12 @@
             <a href="#contact" class="nav-link" data-section="contact">Contact</a>
         </div>
         <div class="flex items-center gap-2">
-            <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium hover:bg-emerald-500/20 transition-all">
+            <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-500/10 to-pink-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium hover:from-emerald-500/20 hover:to-pink-500/20 transition-all">
                 <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span></span>
-                Available
+                Available for Hire
             </a>
-            <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all"><i data-lucide="github" class="w-[18px] h-[18px]"></i></a>
-            <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all"><i data-lucide="linkedin" class="w-[18px] h-[18px]"></i></a>
+            <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-400 hover:text-purple-400 hover:bg-purple-500/10 transition-all"><i data-lucide="github" class="w-[18px] h-[18px]"></i></a>
+            <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-400 hover:text-blue-400 hover:bg-blue-500/10 transition-all"><i data-lucide="linkedin" class="w-[18px] h-[18px]"></i></a>
             <button id="mobile-toggle" aria-label="Toggle menu" class="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/5 transition-all"><i data-lucide="menu" class="w-[18px] h-[18px]"></i></button>
         </div>
     </div>
@@ -380,11 +540,11 @@
 <section id="hero" class="min-h-screen flex flex-col justify-center px-6 lg:px-10 pt-32 pb-24 relative">
     <div class="max-w-5xl mx-auto w-full">
         <div class="reveal flex items-center gap-3 mb-10 flex-wrap">
-            <span class="relative flex h-2.5 w-2.5">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            <span class="freelance-badge">
+                <span class="dot"></span>
+                FREELANCER
             </span>
-            <span class="text-slate-400 text-sm font-light">Actively seeking internship & full-time opportunities</span>
+            <span class="text-slate-400 text-sm font-light">Available for freelance projects & collaborations</span>
             <span class="hr-badge"><i data-lucide="briefcase" class="w-3 h-3"></i> Open to Work</span>
         </div>
 
@@ -400,21 +560,49 @@
         </div>
 
         <p class="reveal d3 text-[15px] font-light text-slate-500 leading-relaxed max-w-2xl mb-12">
-            B.Tech CSE @ Swami Vivekananda University (2028). Building production-grade AI systems, from LLM-powered applications to real-time computer vision. Consistent A+ grade holder with 17+ industry certifications.
+            B.Tech CSE @ Swami Vivekananda University (2028). Freelance Software Engineer & Data Scientist building production-grade AI systems — from LLM-powered applications to real-time computer vision. Let's build something amazing together.
         </p>
 
-        <div class="reveal d4 flex flex-wrap gap-3 mb-12">
-            <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="btn-hire magnetic"><i data-lucide="message-circle" class="w-4 h-4"></i> Hire Me — WhatsApp</a>
+        <div class="reveal d4 flex flex-wrap gap-3 mb-10">
+            <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="btn-hire magnetic"><i data-lucide="message-circle" class="w-4 h-4"></i> Hire Me — Freelance</a>
             <a href="#projects" class="btn-primary magnetic"><i data-lucide="layers" class="w-4 h-4"></i> View Projects</a>
-            <a href="mailto:sethn533@gmail.com?subject=Requesting%20Resume%20-%20Suman%20Seth" class="btn-resume magnetic"><i data-lucide="file-text" class="w-4 h-4"></i> Request Resume</a>
+            <a href="mailto:sethn533@gmail.com?subject=Freelance%20Project%20Inquiry%20-%20Suman%20Seth" class="btn-resume magnetic"><i data-lucide="file-text" class="w-4 h-4"></i> Request Resume</a>
             <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="btn-ghost magnetic"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
         </div>
 
+        <!-- GLOWING SOCIAL MEDIA SHOWCASE WITH OFFICIAL LOGOS -->
+        <div class="reveal d5 mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-[1px] bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"></div>
+                <span class="text-[11px] font-mono uppercase tracking-widest text-pink-400/80">Connect with me</span>
+                <div class="w-8 h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+            </div>
+            <div class="social-showcase-wrap">
+                <div class="social-showcase">
+                    <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="social-icon-card linkedin" aria-label="LinkedIn" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="social-icon-card github" aria-label="GitHub" title="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.755-1.333-1.755-1.087-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.535-1.523.117-3.176 0 0 1.008-.323 3.3 1.23A11.5 11.5 0 0 1 12 5.803c1.02.005 2.045.138 3.003.404 2.29-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.624-5.48 5.92.43.372.814 1.103.814 2.222 0 1.604-.014 2.896-.014 3.286 0 .32.218.694.825.576C20.565 21.795 24 17.298 24 12 24 5.37 18.627 0 12 0z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="social-icon-card instagram" aria-label="Instagram" title="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="social-icon-card facebook" aria-label="Facebook" title="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="social-icon-card whatsapp" aria-label="WhatsApp" title="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- HR Quick Stats Dashboard -->
-        <div class="reveal d5 glass-strong rounded-2xl p-6 md:p-8 border-gradient mb-10 relative overflow-hidden">
+        <div class="reveal d6 glass-strong rounded-2xl p-6 md:p-8 border-gradient mb-10 relative overflow-hidden">
             <div class="flex items-center gap-2 mb-6">
-                <i data-lucide="zap" class="w-4 h-4 text-cyan-400"></i>
-                <span class="text-cyan-400 text-xs font-mono uppercase tracking-widest font-semibold">Recruiter Quick View</span>
+                <i data-lucide="zap" class="w-4 h-4 text-pink-400"></i>
+                <span class="text-pink-400 text-xs font-mono uppercase tracking-widest font-semibold">Client Quick View</span>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="recruiter-stat group cursor-pointer">
@@ -438,7 +626,7 @@
     </div>
 
     <!-- Infinite Tech Marquee -->
-    <div class="marquee-container reveal d6">
+    <div class="marquee-container reveal d7">
         <div class="marquee">
             <span class="marquee-item">Python</span><span class="marquee-item">·</span>
             <span class="marquee-item">TensorFlow</span><span class="marquee-item">·</span>
@@ -450,7 +638,6 @@
             <span class="marquee-item">Docker</span><span class="marquee-item">·</span>
             <span class="marquee-item">Kotlin</span><span class="marquee-item">·</span>
             <span class="marquee-item">GCP</span><span class="marquee-item">·</span>
-            <!-- Duplicate for seamless loop -->
             <span class="marquee-item">Python</span><span class="marquee-item">·</span>
             <span class="marquee-item">TensorFlow</span><span class="marquee-item">·</span>
             <span class="marquee-item">PyTorch</span><span class="marquee-item">·</span>
@@ -464,10 +651,10 @@
         </div>
     </div>
 
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal d6">
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal d8">
         <span class="text-slate-700 text-[10px] font-mono uppercase tracking-widest">Scroll</span>
         <div class="w-5 h-8 rounded-full border border-white/10 flex items-start justify-center p-1.5">
-            <div class="w-1 h-1.5 rounded-full bg-cyan-400 animate-bounce"></div>
+            <div class="w-1 h-1.5 rounded-full bg-pink-400 animate-bounce"></div>
         </div>
     </div>
 </section>
@@ -487,11 +674,11 @@
             <div class="lg:col-span-7 reveal-left">
                 <div class="space-y-5">
                     <p class="text-slate-400 font-light leading-[1.85] text-[15px]">
-                        I'm <span class="text-white font-normal">Suman Seth</span>, a Computer Science Engineering student at
+                        I'm <span class="text-white font-normal">Suman Seth</span>, a <span class="text-pink-400 font-normal">Freelance Software Engineer & Data Scientist</span> and Computer Science Engineering student at
                         <a href="https://www.swamivivekanandauniversity.ac.in/" target="_blank" rel="noopener" class="text-cyan-400 hover:text-cyan-300 transition-colors">Swami Vivekananda University, Kolkata</a>. I specialize in building intelligent systems that combine cutting-edge AI/ML with robust software engineering practices.
                     </p>
                     <p class="text-slate-400 font-light leading-[1.85] text-[15px]">
-                        My project portfolio spans <span class="text-white font-normal">NLP and LLM applications</span> (RAG-based book Q&A with LangChain + ChromaDB),
+                        My freelance project portfolio spans <span class="text-white font-normal">NLP and LLM applications</span> (RAG-based book Q&A with LangChain + ChromaDB),
                         <span class="text-white font-normal">computer vision</span> (CNN-LSTM image captioning, real-time emotion detection), and
                         <span class="text-white font-normal">recommendation systems</span> (collaborative + content-based filtering). Every project is end-to-end: from data pipeline to deployed interface.
                     </p>
@@ -501,7 +688,7 @@
                 </div>
 
                 <div class="flex flex-wrap gap-3 mt-10">
-                    <a href="mailto:sethn533@gmail.com?subject=Opportunity%20for%20Suman%20Seth" class="btn-cta btn-sm magnetic"><i data-lucide="mail" class="w-3.5 h-3.5"></i> Email Me</a>
+                    <a href="mailto:sethn533@gmail.com?subject=Freelance%20Project%20for%20Suman%20Seth" class="btn-cta btn-sm magnetic"><i data-lucide="mail" class="w-3.5 h-3.5"></i> Email Me</a>
                     <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="btn-ghost btn-sm magnetic"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp</a>
                 </div>
             </div>
@@ -511,8 +698,13 @@
                     <h3 class="text-white font-medium text-sm tracking-wide mb-5 font-display uppercase tracking-widest">At a Glance</h3>
                     <div class="space-y-3">
                         <div class="flex items-center gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-3.5 h-3.5 text-cyan-400"></i></div>
+                            <div class="w-8 h-8 rounded-lg bg-pink-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-3.5 h-3.5 text-pink-400"></i></div>
                             <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Name</div><div class="text-slate-200 text-sm font-light">Suman Seth</div></div>
+                        </div>
+                        <div class="h-px bg-white/[0.03]"></div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="briefcase" class="w-3.5 h-3.5 text-amber-400"></i></div>
+                            <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Role</div><div class="text-slate-200 text-sm font-light">Freelance Engineer & Data Scientist</div></div>
                         </div>
                         <div class="h-px bg-white/[0.03]"></div>
                         <div class="flex items-center gap-4">
@@ -531,12 +723,12 @@
                         </div>
                         <div class="h-px bg-white/[0.03]"></div>
                         <div class="flex items-center gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i></div>
+                            <div class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-3.5 h-3.5 text-rose-400"></i></div>
                             <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Phone / WhatsApp</div><a href="tel:+919547111445" class="text-slate-200 text-sm font-light hover:text-cyan-400 transition-colors">+91 9547111445</a></div>
                         </div>
                         <div class="h-px bg-white/[0.03]"></div>
                         <div class="flex items-center gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-3.5 h-3.5 text-rose-400"></i></div>
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-3.5 h-3.5 text-blue-400"></i></div>
                             <div><div class="text-slate-600 text-[10px] uppercase tracking-widest font-mono">Email</div><a href="mailto:sethn533@gmail.com" class="text-cyan-400 text-sm font-light hover:text-cyan-300 transition-colors">sethn533@gmail.com</a></div>
                         </div>
                     </div>
@@ -555,7 +747,7 @@
             <span class="section-label">02 — Why Hire Me</span>
             <h2 class="text-4xl md:text-5xl font-medium tracking-[-0.025em] mt-4 mb-2 font-display text-gradient-subtle">Key <span class="text-gradient">Strengths</span></h2>
             <div class="section-divider"></div>
-            <p class="text-slate-500 font-light text-[15px] mt-6 max-w-2xl">Six reasons recruiters and engineering managers should consider Suman for their next AI/ML or full-stack role.</p>
+            <p class="text-slate-500 font-light text-[15px] mt-6 max-w-2xl">Six reasons clients and engineering managers should consider Suman for their next AI/ML or full-stack freelance project.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
@@ -630,7 +822,6 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 mt-16">
-            <!-- Project 1 -->
             <div class="reveal d1 glass rounded-2xl overflow-hidden tilt-card border-gradient group">
                 <div class="card-content">
                     <div class="h-48 relative overflow-hidden bg-gradient-to-br from-cyan-950/40 to-slate-950/60 flex items-center justify-center">
@@ -651,7 +842,6 @@
                 </div>
             </div>
 
-            <!-- Project 2 -->
             <div class="reveal d2 glass rounded-2xl overflow-hidden tilt-card border-gradient group">
                 <div class="card-content">
                     <div class="h-48 relative overflow-hidden bg-gradient-to-br from-purple-950/40 to-slate-950/60 flex items-center justify-center">
@@ -672,7 +862,6 @@
                 </div>
             </div>
 
-            <!-- Project 3 -->
             <div class="reveal d3 glass rounded-2xl overflow-hidden tilt-card border-gradient group">
                 <div class="card-content">
                     <div class="h-48 relative overflow-hidden bg-gradient-to-br from-emerald-950/40 to-slate-950/60 flex items-center justify-center">
@@ -693,7 +882,6 @@
                 </div>
             </div>
 
-            <!-- Project 4 -->
             <div class="reveal d4 glass rounded-2xl overflow-hidden tilt-card border-gradient group">
                 <div class="card-content">
                     <div class="h-48 relative overflow-hidden bg-gradient-to-br from-amber-950/40 to-slate-950/60 flex items-center justify-center">
@@ -799,7 +987,7 @@
                         <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center"><i data-lucide="brain" class="w-6 h-6 text-purple-400"></i></div>
                         <div><h3 class="text-white font-medium text-lg font-display">AI · ML · Data Science</h3><p class="text-slate-600 text-[11px] font-mono uppercase tracking-wider">Deep Learning · NLP · CV</p></div>
                     </div>
-                    <div class="skill-bar mt-5 mb-6"><div class="skill-bar-fill bg-gradient-to-r from-purple-500 to-purple-400 text-purple-400" style="width:92%"></div></div>
+                    <div class="skill-bar mt-5 mb-6"><div class="skill-bar-fill bg-gradient-to-r from-purple-500 to-pink-400 text-purple-400" style="width:92%"></div></div>
                     <div class="flex flex-wrap gap-2"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">Scikit-learn</span><span class="tag">Keras</span><span class="tag">LangChain</span><span class="tag">HuggingFace</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">MLflow</span><span class="tag">OpenCV</span><span class="tag">CUDA</span></div>
                 </div>
             </div>
@@ -809,7 +997,7 @@
                         <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center"><i data-lucide="terminal" class="w-6 h-6 text-emerald-400"></i></div>
                         <div><h3 class="text-white font-medium text-lg font-display">Languages · Tools · Cloud</h3><p class="text-slate-600 text-[11px] font-mono uppercase tracking-wider">DevOps · Infrastructure</p></div>
                     </div>
-                    <div class="skill-bar mt-5 mb-6"><div class="skill-bar-fill bg-gradient-to-r from-emerald-500 to-emerald-400 text-emerald-400" style="width:78%"></div></div>
+                    <div class="skill-bar mt-5 mb-6"><div class="skill-bar-fill bg-gradient-to-r from-emerald-500 to-amber-400 text-emerald-400" style="width:78%"></div></div>
                     <div class="flex flex-wrap gap-2"><span class="tag">C</span><span class="tag">C++</span><span class="tag">Kotlin</span><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GCP</span><span class="tag">PostgreSQL</span><span class="tag">VS Code</span><span class="tag">Linux</span><span class="tag">GH Actions</span></div>
                 </div>
             </div>
@@ -822,104 +1010,111 @@
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="px-6 lg:px-10 py-28">
     <div class="max-w-7xl mx-auto">
-        <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <div>
-                <span class="section-label">06 — Certifications</span>
-                <h2 class="text-4xl md:text-5xl font-medium tracking-[-0.025em] mt-4 mb-2 font-display text-gradient-subtle">Verified <span class="text-gradient">Credentials</span></h2>
-                <div class="section-divider"></div>
-                <p class="text-slate-500 font-light text-[15px] mt-6 max-w-lg">17 certifications from Microsoft, LinkedIn, Qualcomm, Saylor University, HP, Great Learning, Simplilearn, and Unstop.</p>
-            </div>
-            <button onclick="toggleCerts()" class="btn-ghost btn-sm self-start md:self-auto flex-shrink-0">
-                <i data-lucide="chevrons-down" class="w-4 h-4" id="cert-icon"></i>
-                <span id="cert-btn-text">Show All 17</span>
-            </button>
+        <div class="reveal">
+            <span class="section-label">06 — Certifications</span>
+            <h2 class="text-4xl md:text-5xl font-medium tracking-[-0.025em] mt-4 mb-2 font-display text-gradient-subtle">Verified <span class="text-gradient">Credentials</span></h2>
+            <div class="section-divider"></div>
+            <p class="text-slate-500 font-light text-[15px] mt-6 max-w-lg">17 certifications from Microsoft, LinkedIn, Qualcomm, Saylor University, HP, Great Learning, Simplilearn, and Unstop.</p>
         </div>
-        <div class="mt-12 grid md:grid-cols-2 gap-4" id="certs-container">
-            <a href="https://www.linkedin.com/learning/certificates/bf465ef58a51fc2316cc5399ad74ff0ab61fbeaf8907ce5cfe39f466ef211fb4?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="reveal d1 cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group">
-                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Advance Your Skills in NLP</h4><p class="text-slate-600 text-[11px] font-mono">LinkedIn · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://www.linkedin.com/learning/certificates/3b23642d05e7a30aaae43aeadad8927b34f03aefe9200262ced2f4691ed79d1b?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="reveal d2 cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group">
-                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Generative AI: Working with LLMs</h4><p class="text-slate-600 text-[11px] font-mono">LinkedIn · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://www.linkedin.com/learning/certificates/0c520073b3f55c9687976932f12c9d4697c71d5b49084f3ba580fb9a66013cd0?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="reveal d3 cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group">
-                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Deep Learning with TensorFlow</h4><p class="text-slate-600 text-[11px] font-mono">LinkedIn · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://learn.microsoft.com/api/achievements/share/en-us/SUMANSETH-3817/NQVJSKKF?sharingId=F1049524A3B932C3" target="_blank" rel="noopener noreferrer" class="reveal d4 cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group">
-                <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="box" class="w-5 h-5 text-green-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Data Engineer Career Path</h4><p class="text-slate-600 text-[11px] font-mono">Microsoft · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://www.linkedin.com/learning/certificates/5c92b2dde5ae0edb8eb46d8e95c2e50b8f6c8f41398878984aa44f07b6bb46e3?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="reveal d5 cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group">
-                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Hands-On NLP</h4><p class="text-slate-600 text-[11px] font-mono">LinkedIn · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://www.linkedin.com/learning/certificates/78a04c2472c416fae55808f62117ffc817619a63dd7fd3c6b944b3c33c07fc1e" target="_blank" rel="noopener noreferrer" class="reveal d6 cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group">
-                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Advanced NLP with Python for ML</h4><p class="text-slate-600 text-[11px] font-mono">LinkedIn · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://www.credly.com/badges/e8143d80-3a84-4e47-9ae8-3f5d7ec8e984/public_url" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="box" class="w-5 h-5 text-green-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">AI Skills Fest 2026</h4><p class="text-slate-600 text-[11px] font-mono">Microsoft · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://www.linkedin.com/learning/certificates/3fcc504c1071c3bb201fd3345c9da44095df158dd046a537b82d56a2ffa4d4f2/" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Career Skills in Data Analytics</h4><p class="text-slate-600 text-[11px] font-mono">LinkedIn · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1780985338/2581125304SS.pdf" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="graduation-cap" class="w-5 h-5 text-amber-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Fundamentals of Machine Learning</h4><p class="text-slate-600 text-[11px] font-mono">Saylor University · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" title="Link coming soon" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="printer" class="w-5 h-5 text-indigo-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Professional Networking for Career Growth</h4><p class="text-slate-600 text-[11px] font-mono">HP · Aug 2025</p></div>
-                <i data-lucide="link-off" class="w-4 h-4 text-slate-700 flex-shrink-0"></i>
-            </a>
-            <a href="https://www.credly.com/badges/a3f6b4fb-84ce-4ae2-960b-48a0b289c06d" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="cpu" class="w-5 h-5 text-red-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">AI Upskilling: Technical Foundations</h4><p class="text-slate-600 text-[11px] font-mono">Qualcomm · Jun 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://unstop.com/certificate-preview/9595621f-fc33-476a-95a2-0a731d4df349" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="trophy" class="w-5 h-5 text-orange-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Operating System (OS)</h4><p class="text-slate-600 text-[11px] font-mono">Unstop · Jan 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://simpli.app.link/uXChgFNuq3b" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="database" class="w-5 h-5 text-cyan-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Introduction to SQL</h4><p class="text-slate-600 text-[11px] font-mono">Simplilearn · May 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://simpli.app.link/CWctT2FWp3b" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="table" class="w-5 h-5 text-green-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Business Analytics with Excel</h4><p class="text-slate-600 text-[11px] font-mono">Microsoft · May 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://www.mygreatlearning.com/certificate/QEXVYHTL?referrer_code=GLKQH7LG" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Python for Machine Learning</h4><p class="text-slate-600 text-[11px] font-mono">Great Learning · May 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://unstop.com/certificate-preview/3dae90d3-b82f-4924-8df7-8157d182d804" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="trophy" class="w-5 h-5 text-orange-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Probability</h4><p class="text-slate-600 text-[11px] font-mono">Unstop · May 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
-            <a href="https://unstop.com/certificate-preview/8b1f0131-5ea6-4ba7-acea-98c9fa17fb14" target="_blank" rel="noopener noreferrer" class="cert-hidden cert-link cert-item glass rounded-xl p-5 flex items-center gap-4 group" style="display:none">
-                <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="trophy" class="w-5 h-5 text-orange-400"></i></div>
-                <div class="flex-1 min-w-0"><h4 class="text-[13px] font-medium truncate group-hover:text-cyan-400 transition-colors">Kascade, Kshitij 2026 — Participation</h4><p class="text-slate-600 text-[11px] font-mono">Unstop · Jan 2026</p></div>
-                <i data-lucide="external-link" class="w-4 h-4 text-slate-700 group-hover:text-cyan-400 transition-colors flex-shrink-0"></i>
-            </a>
+
+        <!-- Structured Certification Table -->
+        <div class="reveal d1 mt-12 cert-table-wrap">
+            <table class="cert-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Certification</th>
+                        <th>Issuer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="cert-rank">01</td>
+                        <td><a href="https://www.linkedin.com/learning/certificates/bf465ef58a51fc2316cc5399ad74ff0ab61fbeaf8907ce5cfe39f466ef211fb4?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="cert-name">Advance Your Skills in NLP</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">02</td>
+                        <td><a href="https://www.linkedin.com/learning/certificates/3b23642d05e7a30aaae43aeadad8927b34f03aefe9200262ced2f4691ed79d1b?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="cert-name">Generative AI: Working with LLMs</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">03</td>
+                        <td><a href="https://www.linkedin.com/learning/certificates/0c520073b3f55c9687976932f12c9d4697c71d5b49084f3ba580fb9a66013cd0?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="cert-name">Deep Learning with TensorFlow</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">04</td>
+                        <td><a href="https://learn.microsoft.com/api/achievements/share/en-us/SUMANSETH-3817/NQVJSKKF?sharingId=F1049524A3B932C3" target="_blank" rel="noopener noreferrer" class="cert-name">Data Engineer Career Path</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="box" class="w-3 h-3"></i> Microsoft</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">05</td>
+                        <td><a href="https://www.linkedin.com/learning/certificates/5c92b2dde5ae0edb8eb46d8e95c2e50b8f6c8f41398878984aa44f07b6bb46e3?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="cert-name">Hands-On NLP</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">06</td>
+                        <td><a href="https://www.linkedin.com/learning/certificates/78a04c2472c416fae55808f62117ffc817619a63dd7fd3c6b944b3c33c07fc1e" target="_blank" rel="noopener noreferrer" class="cert-name">Advanced NLP with Python for ML</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">07</td>
+                        <td><a href="https://www.credly.com/badges/e8143d80-3a84-4e47-9ae8-3f5d7ec8e984/public_url" target="_blank" rel="noopener noreferrer" class="cert-name">AI Skills Fest 2026</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="box" class="w-3 h-3"></i> Microsoft</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">08</td>
+                        <td><a href="https://www.linkedin.com/learning/certificates/3fcc504c1071c3bb201fd3345c9da44095df158dd046a537b82d56a2ffa4d4f2/" target="_blank" rel="noopener noreferrer" class="cert-name">Career Skills in Data Analytics</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="linkedin" class="w-3 h-3"></i> LinkedIn</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">09</td>
+                        <td><a href="https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1780985338/2581125304SS.pdf" target="_blank" rel="noopener noreferrer" class="cert-name">Fundamentals of Machine Learning</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="graduation-cap" class="w-3 h-3"></i> Saylor University</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">10</td>
+                        <td><a href="#" target="_blank" rel="noopener noreferrer" class="cert-name">Professional Networking for Career Growth</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="printer" class="w-3 h-3"></i> HP</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">11</td>
+                        <td><a href="https://www.credly.com/badges/a3f6b4fb-84ce-4ae2-960b-48a0b289c06d" target="_blank" rel="noopener noreferrer" class="cert-name">AI Upskilling: Technical Foundations</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="cpu" class="w-3 h-3"></i> Qualcomm</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">12</td>
+                        <td><a href="https://unstop.com/certificate-preview/9595621f-fc33-476a-95a2-0a731d4df349" target="_blank" rel="noopener noreferrer" class="cert-name">Operating System (OS)</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="trophy" class="w-3 h-3"></i> Unstop</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">13</td>
+                        <td><a href="https://simpli.app.link/uXChgFNuq3b" target="_blank" rel="noopener noreferrer" class="cert-name">Introduction to SQL</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="database" class="w-3 h-3"></i> Simplilearn</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">14</td>
+                        <td><a href="https://simpli.app.link/CWctT2FWp3b" target="_blank" rel="noopener noreferrer" class="cert-name">Business Analytics with Excel</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="table" class="w-3 h-3"></i> Microsoft</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">15</td>
+                        <td><a href="https://www.mygreatlearning.com/certificate/QEXVYHTL?referrer_code=GLKQH7LG" target="_blank" rel="noopener noreferrer" class="cert-name">Python for Machine Learning</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="sparkles" class="w-3 h-3"></i> Great Learning</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">16</td>
+                        <td><a href="https://unstop.com/certificate-preview/3dae90d3-b82f-4924-8df7-8157d182d804" target="_blank" rel="noopener noreferrer" class="cert-name">Probability</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="trophy" class="w-3 h-3"></i> Unstop</span></td>
+                    </tr>
+                    <tr>
+                        <td class="cert-rank">17</td>
+                        <td><a href="https://unstop.com/certificate-preview/8b1f0131-5ea6-4ba7-acea-98c9fa17fb14" target="_blank" rel="noopener noreferrer" class="cert-name">Kascade, Kshitij 2026 — Participation</a></td>
+                        <td><span class="cert-issuer-badge"><i data-lucide="trophy" class="w-3 h-3"></i> Unstop</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
@@ -936,20 +1131,44 @@
         </div>
 
         <div class="reveal d1 mt-16 glass-strong rounded-3xl p-10 md:p-14 text-center relative overflow-hidden border-gradient">
-            <div class="absolute inset-0 opacity-30" style="background-image:radial-gradient(circle at 20% 50%, rgba(6,182,212,0.2) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(139,92,246,0.2) 0%, transparent 50%), radial-gradient(circle at 50% 100%, rgba(236,72,153,0.15) 0%, transparent 50%)"></div>
+            <div class="absolute inset-0 opacity-30" style="background-image:radial-gradient(circle at 20% 50%, rgba(6,182,212,0.25) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(139,92,246,0.25) 0%, transparent 50%), radial-gradient(circle at 50% 100%, rgba(236,72,153,0.2) 0%, transparent 50%)"></div>
             <div class="relative">
                 <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-6">
                     <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span>
-                    <span class="text-emerald-400 text-xs font-medium">Available for Internships & Full-Time Roles</span>
+                    <span class="text-emerald-400 text-xs font-medium">Available for Freelance Projects & Collaborations</span>
                 </div>
-                <h3 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4 font-display">Looking for a motivated engineer<br class="hidden md:inline"> who ships real AI products?</h3>
-                <p class="text-slate-400 font-light text-[15px] max-w-xl mx-auto mb-8">I bring a rare combination of ML expertise and software engineering skills. Let's talk about how I can contribute to your team — I respond within 24 hours.</p>
+                <h3 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4 font-display">Looking for a motivated freelancer<br class="hidden md:inline"> who ships real AI products?</h3>
+                <p class="text-slate-400 font-light text-[15px] max-w-xl mx-auto mb-8">I bring a rare combination of ML expertise and software engineering skills. Let's talk about how I can help with your project — I respond within 24 hours.</p>
+                
+                <!-- Glowing Social Icons in Contact -->
+                <div class="flex justify-center mb-10">
+                    <div class="social-showcase-wrap">
+                        <div class="social-showcase">
+                            <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="social-icon-card linkedin" aria-label="LinkedIn" title="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </a>
+                            <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="social-icon-card github" aria-label="GitHub" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.755-1.333-1.755-1.087-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.535-1.523.117-3.176 0 0 1.008-.323 3.3 1.23A11.5 11.5 0 0 1 12 5.803c1.02.005 2.045.138 3.003.404 2.29-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.624-5.48 5.92.43.372.814 1.103.814 2.222 0 1.604-.014 2.896-.014 3.286 0 .32.218.694.825.576C20.565 21.795 24 17.298 24 12 24 5.37 18.627 0 12 0z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="social-icon-card instagram" aria-label="Instagram" title="Instagram">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                            </a>
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="social-icon-card facebook" aria-label="Facebook" title="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="social-icon-card whatsapp" aria-label="WhatsApp" title="WhatsApp">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="btn-hire magnetic">
                         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         Chat on WhatsApp
                     </a>
-                    <a href="mailto:sethn533@gmail.com?subject=Opportunity%20for%20Suman%20Seth" class="btn-primary magnetic"><i data-lucide="mail" class="w-4 h-4"></i> Send Email</a>
+                    <a href="mailto:sethn533@gmail.com?subject=Freelance%20Project%20for%20Suman%20Seth" class="btn-primary magnetic"><i data-lucide="mail" class="w-4 h-4"></i> Send Email</a>
                 </div>
             </div>
         </div>
@@ -961,26 +1180,37 @@
     <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
             <a href="#hero" class="flex items-center gap-3 group">
-                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center group-hover:rotate-12 transition-transform">
-                    <span class="text-cyan-400 font-semibold text-xs font-mono">SS</span>
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center group-hover:rotate-12 transition-transform">
+                    <span class="text-pink-400 font-semibold text-xs font-mono">SS</span>
                 </div>
                 <div>
                     <div class="text-white text-sm font-medium leading-tight font-display">Suman Seth</div>
-                    <div class="text-slate-600 text-[10px] font-mono tracking-wider">ENGINEER · DATA SCIENTIST</div>
+                    <div class="text-slate-600 text-[10px] font-mono tracking-wider">FREELANCER · ENGINEER · DATA SCIENTIST</div>
                 </div>
             </a>
-            <div class="flex items-center gap-2">
-                <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all" aria-label="WhatsApp"><i data-lucide="message-circle" class="w-[16px] h-[16px]"></i></a>
-                <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-blue-400 hover:bg-blue-500/10 transition-all" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-[16px] h-[16px]"></i></a>
-                <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/10 transition-all" aria-label="GitHub"><i data-lucide="github" class="w-[16px] h-[16px]"></i></a>
-                <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-pink-500 hover:bg-pink-500/10 transition-all" aria-label="Instagram"><i data-lucide="instagram" class="w-[16px] h-[16px]"></i></a>
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-blue-600 hover:bg-blue-600/10 transition-all" aria-label="Facebook"><i data-lucide="facebook" class="w-[16px] h-[16px]"></i></a>
+            <!-- Glowing Footer Social Icons with Official SVGs -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/919547111445" target="_blank" rel="noopener" class="footer-social whatsapp" aria-label="WhatsApp" title="WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/suman-seth-b05417324/" target="_blank" rel="noopener" class="footer-social linkedin" aria-label="LinkedIn" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://github.com/Suman18-bit" target="_blank" rel="noopener" class="footer-social github" aria-label="GitHub" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.755-1.333-1.755-1.087-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.535-1.523.117-3.176 0 0 1.008-.323 3.3 1.23A11.5 11.5 0 0 1 12 5.803c1.02.005 2.045.138 3.003.404 2.29-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.624-5.48 5.92.43.372.814 1.103.814 2.222 0 1.604-.014 2.896-.014 3.286 0 .32.218.694.825.576C20.565 21.795 24 17.298 24 12 24 5.37 18.627 0 12 0z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/suman.seth.0007/?hl=en" target="_blank" rel="noopener" class="footer-social instagram" aria-label="Instagram" title="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-social facebook" aria-label="Facebook" title="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
             </div>
         </div>
         <div class="sep mb-6"></div>
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span class="text-slate-600 text-xs font-light">© <span id="footer-year"></span> Suman Seth. Built from scratch with passion.</span>
-            <a href="#hero" class="text-slate-600 text-xs hover:text-cyan-400 transition-colors">Back to top ↑</a>
+            <span class="text-slate-600 text-xs font-light">© <span id="footer-year"></span> Suman Seth. Freelance Engineer & Data Scientist. Built from scratch with passion.</span>
+            <a href="#hero" class="text-slate-600 text-xs hover:text-pink-400 transition-colors">Back to top ↑</a>
         </div>
     </div>
 </footer>
@@ -990,7 +1220,6 @@
     document.getElementById('footer-year').textContent = new Date().getFullYear();
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Custom Cursor
     const cursorDot = document.getElementById('cursor-dot');
     const cursorRing = document.getElementById('cursor-ring');
     if (window.matchMedia('(min-width: 769px)').matches) {
@@ -1014,7 +1243,6 @@
         });
     }
 
-    // Scroll progress bar
     const progressBar = document.getElementById('scroll-progress');
     window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
@@ -1023,7 +1251,6 @@
         progressBar.style.width = pct + '%';
     }, { passive: true });
 
-    // Active nav link on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     const navObserver = new IntersectionObserver((entries) => {
@@ -1035,14 +1262,12 @@
     }, { threshold: 0.4, rootMargin: '-80px 0px -40% 0px' });
     sections.forEach((s) => navObserver.observe(s));
 
-    // Floating social sidebar visibility
     const floatingSocial = document.getElementById('floating-social');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 400) floatingSocial.classList.add('visible');
         else floatingSocial.classList.remove('visible');
     }, { passive: true });
 
-    // Mobile menu
     const mobileToggle = document.getElementById('mobile-toggle');
     const mobileOverlay = document.getElementById('mobile-overlay');
     mobileToggle.addEventListener('click', () => {
@@ -1054,7 +1279,6 @@
         mobileToggle.setAttribute('aria-expanded', 'false');
     }
 
-    // Scroll reveal
     const revealTargets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -1067,7 +1291,6 @@
     revealTargets.forEach((el) => revealObserver.observe(el));
     document.querySelectorAll('#hero .reveal').forEach((el) => el.classList.add('visible'));
 
-    // Skill bar fill on scroll
     const skillBars = document.querySelectorAll('.skill-bar-fill');
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -1079,7 +1302,6 @@
     }, { threshold: 0.5 });
     skillBars.forEach((bar) => skillObserver.observe(bar));
 
-    // Animated stat counters
     const counters = document.querySelectorAll('[data-count]');
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -1103,13 +1325,12 @@
     }, { threshold: 0.6 });
     counters.forEach((c) => counterObserver.observe(c));
 
-    // Typing effect in hero subline
     const typedEl = document.getElementById('typed-text');
     const typedStrings = [
-        'B.Tech CSE Student · Software Engineer',
-        'AI/ML Engineer · Data Scientist',
-        'RAG Systems · LLM Applications',
-        'Open to Internships & Full-Time Roles'
+        'Freelance Software Engineer & Data Scientist',
+        'AI/ML Engineer · Available for Hire',
+        'Building RAG Systems & LLM Applications',
+        'Open for Freelance Projects & Collaborations'
     ];
     if (prefersReducedMotion) {
         typedEl.textContent = typedStrings[0];
@@ -1138,19 +1359,6 @@
         typeLoop();
     }
 
-    // Certifications show more/less
-    function toggleCerts() {
-        const hidden = document.querySelectorAll('.cert-hidden');
-        const btnText = document.getElementById('cert-btn-text');
-        const icon = document.getElementById('cert-icon');
-        const isShowing = hidden[0] && hidden[0].style.display !== 'none';
-        hidden.forEach((el) => { el.style.display = isShowing ? 'none' : 'flex'; });
-        btnText.textContent = isShowing ? 'Show All 17' : 'Show Less';
-        icon.setAttribute('data-lucide', isShowing ? 'chevrons-down' : 'chevrons-up');
-        lucide.createIcons();
-    }
-
-    // 3D Tilt Effect on Cards
     if (!prefersReducedMotion) {
         const tiltCards = document.querySelectorAll('.tilt-card');
         tiltCards.forEach(card => {
@@ -1160,7 +1368,7 @@
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg rotation
+                const rotateX = ((y - centerY) / centerY) * -5;
                 const rotateY = ((x - centerX) / centerX) * 5;
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
             });
@@ -1170,7 +1378,6 @@
         });
     }
 
-    // Magnetic Buttons
     if (!prefersReducedMotion && window.matchMedia('(min-width: 769px)').matches) {
         const magnets = document.querySelectorAll('.magnetic');
         magnets.forEach(magnet => {
@@ -1186,7 +1393,6 @@
         });
     }
 
-    // Three.js particle field background
     (function initParticles() {
         const canvas = document.getElementById('three-canvas');
         const scene = new THREE.Scene();
@@ -1197,25 +1403,30 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        const particleCount = window.innerWidth < 768 ? 350 : 1000;
+        const particleCount = window.innerWidth < 768 ? 400 : 1200;
         const positions = new Float32Array(particleCount * 3);
-        const colors = new Float32Array(particleCount * 3); // Add colors array
+        const colors = new Float32Array(particleCount * 3);
         
         const color1 = new THREE.Color(0x06b6d4); // Cyan
         const color2 = new THREE.Color(0x8b5cf6); // Purple
         const color3 = new THREE.Color(0xec4899); // Pink
+        const color4 = new THREE.Color(0xf59e0b); // Amber
+        const color5 = new THREE.Color(0x10b981); // Emerald
+        const color6 = new THREE.Color(0x3b82f6); // Blue
 
         for (let i = 0; i < particleCount; i++) {
             positions[i * 3] = (Math.random() - 0.5) * 18;
             positions[i * 3 + 1] = (Math.random() - 0.5) * 12;
             positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
             
-            // Randomly assign one of the 3 colors to each particle
             const rand = Math.random();
             let chosenColor;
-            if (rand < 0.34) chosenColor = color1;
-            else if (rand < 0.67) chosenColor = color2;
-            else chosenColor = color3;
+            if (rand < 0.17) chosenColor = color1;
+            else if (rand < 0.34) chosenColor = color2;
+            else if (rand < 0.51) chosenColor = color3;
+            else if (rand < 0.68) chosenColor = color4;
+            else if (rand < 0.84) chosenColor = color5;
+            else chosenColor = color6;
             
             colors[i * 3] = chosenColor.r;
             colors[i * 3 + 1] = chosenColor.g;
@@ -1224,13 +1435,13 @@
         
         const geometry = new THREE.BufferGeometry();
         geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3)); // Add color attribute
+        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
         const material = new THREE.PointsMaterial({
-            size: 0.03,
-            vertexColors: true, // Enable vertex colors
+            size: 0.035,
+            vertexColors: true,
             transparent: true,
-            opacity: 0.6,
+            opacity: 0.7,
             blending: THREE.AdditiveBlending
         });
         
